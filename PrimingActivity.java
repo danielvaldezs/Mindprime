@@ -1,86 +1,61 @@
 package main;
 
 public class PrimingActivity {
-	
-	private String palabras[] = { "papalote", "popote", "violacion", "felicidad", "diversion", "hola", "amigo" };
-	
-	public static void main(String[] args) {
-		// Actividad Priming
-		// Se realizara la busqueda de palabras y se seleccionara una de manera aleatoria.
-		// Se elegiran de forma aleatoria los caracteres a ocultar.
-				
-		PrimingActivity actividadPriming = new PrimingActivity();
-		
-		String palabraAleatoria = actividadPriming.getRandomWord(actividadPriming.getPalabras());
-		actividadPriming.manipulateWord(palabraAleatoria);
-	}
-	
-	public String getRandomWord(String palabras[]) {
-		
-		int longitudPalabras = palabras.length; // Conocer la longitud del arreglo de palabras
-		int numeroAleatorio = (int)(Math.random() * longitudPalabras); // Generar numero aleatorio con respecto a longitud del arreglo
-		
-		return palabras[numeroAleatorio]; // Obtener palabra aleatoria
-	}
-	
-	public void manipulateWord(String palabraSeleccionada) {
-		
-		int removePositions[];
-		char replaceChar = '_';
-		
-		// Conocer el numero de caracteres de la palabra
-		int longitudPalabra = palabraSeleccionada.length();
-		
-		if (longitudPalabra <= 4) {
-			removePositions = new int[1];
-			removePositions[0] = 1;
-		} else if (longitudPalabra > 4 && longitudPalabra <= 6) {
-			
-			removePositions = new int[2];
-			removePositions[0] = 1;
-			removePositions[1] = longitudPalabra - 2;
-					
-		} else if (longitudPalabra > 6 && longitudPalabra <= 8) {
-			
-			removePositions = new int[3];
-			removePositions[0] = 1;
-			removePositions[1] = 4;
-			removePositions[2] = longitudPalabra - 1;
-			
-		} else {
-			
-			removePositions = new int[4];
-			removePositions[0] = 2;
-			removePositions[1] = 4;
-			removePositions[2] = 6;
-			removePositions[3] = 8;
-			
-		}
-		
-		String palabraManipulada = replaceCharAt(palabraSeleccionada, removePositions, replaceChar);
-		System.out.println(palabraManipulada);
-	}
-	
-	public static String replaceCharAt(String palabra, int positions[], char replaceChar) {
-		
-		StringBuilder nuevaPalabra = new StringBuilder(palabra);
-		
-		for (int position : positions) {
-			nuevaPalabra.setCharAt(position, replaceChar);
-		}
-		
-		return nuevaPalabra.toString();
-		
+
+	private float movementTime;
+	private float answerTime;
+	private String answer;
+	private int idTest;
+	private int idWord;
+
+	public PrimingActivity(float movementTime, float answerTime, String answer, int idTest, int idWord) {
+		this.movementTime = movementTime;
+		this.answerTime = movementTime;
+		this.answer = answer;
+		this.idTest = idTest;
+		this.idWord = idWord;
 	}
 
-	public String[] getPalabras() {
-		return palabras;
+	public PrimingActivity() {
 	}
 
-	public void setPalabras(String[] palabras) {
-		this.palabras = palabras;
+	public float getMovementTime() {
+		return movementTime;
 	}
-	
-	
 
+	public void setMovementTime(float movementTime) {
+		this.movementTime = movementTime;
+	}
+
+	public float getAnswerTime() {
+		return answerTime;
+	}
+
+	public void setAnswerTime(float answerTime) {
+		this.answerTime = answerTime;
+	}
+
+	public String getAnswer() {
+		return answer;
+	}
+
+	public void setAnswer(String answer) {
+		this.answer = answer;
+	}
+
+	public int getIdTest() {
+		return idTest;
+	}
+
+	public void setIdTest(int idTest) {
+		this.idTest = idTest;
+	}
+
+	public int getIdWord() {
+		return idWord;
+	}
+
+	public void setIdWord(int idWord) {
+		this.idWord = idWord;
+	}
 }

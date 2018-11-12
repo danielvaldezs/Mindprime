@@ -5,11 +5,21 @@ public class Test {
 	private String correctAnswer;
 	private String failedAnswer;
 	private float finalTime;
+	private int idUser;
 
-	public Test(String correctAnswer, String failedAnswer, float finalTime) {
+	public Test(String correctAnswer, String failedAnswer, float finalTime, int idUser) {
 		this.correctAnswer = correctAnswer;
 		this.failedAnswer = failedAnswer;
 		this.finalTime = finalTime;
+		this.idUser = idUser;
+	}
+
+	public int getIdUser() {
+		return idUser;
+	}
+
+	public void setIdUser(int idUser) {
+		this.idUser = idUser;
 	}
 
 	public String getCorrectAnswer() {
@@ -35,5 +45,12 @@ public class Test {
 	public void setFinalTime(float finalTime) {
 		this.finalTime = finalTime;
 	}
+	
+	@Override
+	public String toString() {
+		return "Test [correctAnswer=" + correctAnswer + ", failedAnswer=" + failedAnswer + ", finalTime=" + finalTime
+				+ ", idUser=" + idUser + "]";
+	}
+
 
 }

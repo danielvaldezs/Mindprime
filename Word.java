@@ -4,6 +4,7 @@ public class Word {
 
 	private String word;
 	private String category;
+	private int quantitySyllables;
 	private char initialLetter;
 	private boolean mainWord;
 
@@ -11,9 +12,10 @@ public class Word {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Word(String word, String category, char initialLetter, boolean mainWord) {
+	public Word(String word, String category, int quantitySyllables, char initialLetter, boolean mainWord) {
 		this.word = word;
 		this.category = category;
+		this.quantitySyllables = quantitySyllables;
 		this.initialLetter = initialLetter;
 		this.mainWord = mainWord;
 	}
@@ -50,9 +52,18 @@ public class Word {
 		this.initialLetter = initialLetter;
 	}
 
+	public int getQuantitySyllables() {
+		return quantitySyllables;
+	}
+
+	public void setQuantitySyllables(int quantitySyllables) {
+		this.quantitySyllables = quantitySyllables;
+	}
+	
 	@Override
 	public String toString() {
-		return "Word [word=" + word + ", category=" + category + ", initialLetter=" + initialLetter + "]";
+		return "Word [word=" + word + ", category=" + category + ", quantitySyllables=" + quantitySyllables
+				+ ", initialLetter=" + initialLetter + ", mainWord=" + mainWord + "]";
 	}
 
 }

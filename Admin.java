@@ -17,11 +17,20 @@ public class Admin {
 		this.password = password;
 		this.adminName = adminName;
 	}
+	
 
 	@Override
 	public String toString() {
 		return "Admin [firstName=" + firstName + ", lastName=" + lastName + ", password=" + password + ", adminName="
 				+ adminName + "]";
+	}
+
+	public String getAdminName() {
+		return adminName;
+	}
+
+	public void setAdminName(String adminName) {
+		this.adminName = adminName;
 	}
 
 	public String getFirstName() {
@@ -46,14 +55,6 @@ public class Admin {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public String getAdminName() {
-		return adminName;
-	}
-
-	public void setAdminName(String adminName) {
-		this.adminName = adminName;
 	}
 
 }

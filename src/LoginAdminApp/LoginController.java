@@ -1,6 +1,8 @@
 package LoginAdminApp;
 import Admin.AdminController;
 import User.UserController;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +14,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -71,4 +74,6 @@ public class LoginController implements Initializable {
             ex.printStackTrace();
         }
     }
+
+
 }

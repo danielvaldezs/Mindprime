@@ -1,13 +1,21 @@
 package Admin;
 
 import DatabaseConnection.dbConnection;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+import javafx.util.Duration;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -22,6 +30,7 @@ public class AdminController {
     @FXML private RadioButton rbCFId;
     @FXML private Button startButtonId;
     private String group;
+    Stage focusPointStage = new Stage();
 
 
     public void startActivity(ActionEvent actionEvent) {
@@ -33,6 +42,9 @@ public class AdminController {
                         "\n grupo: " + this.group
         );
         addUser();
+        showFocusPoint();
+        setTimer();
+
     }
 
     public void radioSelect(ActionEvent actionEvent) {
@@ -65,12 +77,54 @@ public class AdminController {
             e.printStackTrace();
         }
     }
+    public void showFocusPoint(){
+        try{
+
+            FXMLLoader focusPointLoader = new FXMLLoader();
+            Pane focusPointRoot = (Pane)focusPointLoader.load(getClass().getResource("/Instructions/FocusPoint.fxml").openStream());
+
+            AdminController adminController = (AdminController)focusPointLoader.getController();
+            Scene scene = new Scene(focusPointRoot);
+            focusPointStage.setScene(scene);
+            focusPointStage.setTitle("Focus Point");
+            focusPointStage.setResizable(false);
+            focusPointStage.show();
+
+        }catch (IOException ex){
+            ex.printStackTrace();
+        }
+    }
 
     public void clearFields(){
         this.nameId.setText("");
         this.lastnameId.setText("");
         this.birthDateId.setText("");
         this.institutionId.setText("");
+    }
+
+    public void setTimer(){
+        Timeline contador = new Timeline(new KeyFrame(
+                Duration.seconds(4),
+                accion -> showFamiliarityInstruction()));
+        contador.play();
+    }
+
+    public void showFamiliarityInstruction(){
+        try{
+            Stage familiarityInstructionStage = new Stage();
+            FXMLLoader familiarityInstructionLoader = new FXMLLoader();
+            Pane familiarityInstructionRoot = (Pane)familiarityInstructionLoader.load(getClass().getResource("/Instructions/FamiliarityInstruction.fxml").openStream());
+
+            AdminController familiarityInstructionController = (AdminController)familiarityInstructionLoader.getController();
+            Scene scene = new Scene(familiarityInstructionRoot);
+            familiarityInstructionStage.setScene(scene);
+            familiarityInstructionStage.setTitle("FamiliarityInstruction Point");
+            familiarityInstructionStage.setResizable(false);
+            familiarityInstructionStage.show();
+
+        }catch (IOException ex){
+            ex.printStackTrace();
+        }
     }
 
 }

@@ -1,0 +1,58 @@
+package FocusPointApp;
+import Admin.AdminController;
+import User.UserController;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+import javafx.util.Duration;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class FocusPointController implements Initializable {
+
+    FocusPointModel FocusPointModel = new FocusPointModel();
+
+    @FXML private Label dbStatusId;
+    @Override
+
+    public void initialize(URL url, ResourceBundle rb) {
+        if(this.loginModel.isDatabaseConnected()){
+            this.dbStatusId.setText("Database connected");
+        }else{
+            this.dbStatusId.setText("Database NOT connected");
+        }
+    }
+
+    @FXML
+    public void showFocusPoint(){
+        try{
+
+            FXMLLoader focusPointLoader = new FXMLLoader();
+            Pane focusPointRoot = (Pane)focusPointLoader.load(getClass().getResource("/Instructions/FocusPoint.fxml").openStream());
+
+            AdminController adminController = (AdminController)focusPointLoader.getController();
+            Scene scene = new Scene(focusPointRoot);
+            focusPointStage.setScene(scene);
+            focusPointStage.setTitle("Focus Point");
+            focusPointStage.setResizable(false);
+            focusPointStage.show();
+
+        }catch (IOException ex){
+            ex.printStackTrace();
+        }
+    }
+
+
+}

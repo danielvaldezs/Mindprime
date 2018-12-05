@@ -1,4 +1,3 @@
-# Mindprime
 
 
 

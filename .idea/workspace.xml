@@ -2,30 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47f489bf-53a1-4047-b39a-bb743909524a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/MindPrimePrueba/Admin/AdminController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MindPrimePrueba/Admin/AdminFXML.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MindPrimePrueba/DatabaseConnection/dbConnection.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MindPrimePrueba/Instructions/FamiliarityInstruction.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MindPrimePrueba/Instructions/FamiliarityWord.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MindPrimePrueba/Instructions/FocusPoint.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MindPrimePrueba/Instructions/PrimingInstruction.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MindPrimePrueba/LoginAdminApp/LoginApp.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MindPrimePrueba/LoginAdminApp/LoginController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MindPrimePrueba/LoginAdminApp/LoginFXML.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MindPrimePrueba/LoginAdminApp/LoginModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MindPrimePrueba/MindPrimeDB.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MindPrimePrueba/User/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MindPrimePrueba/User/UserController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MindPrimePrueba/User/UserFXML.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MindPrimePrueba/resources/arrowLeft.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Instructions/FamiliarityInstruction.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Instructions/FamiliarityWord.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Instructions/FocusPoint.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Instructions/PrimingInstruction.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/arrowLeft.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controllers/AddNewWordController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controllers/FamiliarityInstructionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controllers/FamiliarityWordController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controllers/PrimingInstructionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controllers/PrimingWordController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Layouts/AddNewWord.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Layouts/FamiliarityWord.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Layouts/PrimingWord.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/01bda24b-b65d-4f53-acfd-6998b57fc069.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/01bda24b-b65d-4f53-acfd-6998b57fc069.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Admin/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoginAdminApp/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginAdminApp/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MindPrimePrueba/Admin/AdminController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MindPrimePrueba/Admin/AdminFXML.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MindPrimePrueba/DatabaseConnection/dbConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MindPrimePrueba/DatabaseConnection/dbConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MindPrimePrueba/Instructions/FamiliarityInstruction.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MindPrimePrueba/Instructions/FamiliarityWord.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MindPrimePrueba/Instructions/FocusPoint.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MindPrimePrueba/Instructions/PrimingInstruction.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MindPrimePrueba/LoginAdminApp/LoginApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MindPrimePrueba/LoginAdminApp/LoginApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MindPrimePrueba/LoginAdminApp/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MindPrimePrueba/LoginAdminApp/LoginFXML.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MindPrimePrueba/LoginAdminApp/LoginModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MindPrimePrueba/LoginAdminApp/LoginModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MindPrimePrueba/MindPrimeDB.db" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MindPrimePrueba/MindPrimeDB.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Admin/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Admin/AdminFXML.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Layouts/AdminFXML.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatabaseConnection/dbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseConnection/dbConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Instructions/FamiliarityInstruction.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Layouts/FamiliarityInstruction.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Instructions/FamiliarityWord.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Instructions/FocusPoint.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Layouts/FocusPoint.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Instructions/PrimingInstruction.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Layouts/PrimingInstruction.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoginAdminApp/LoginApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginAdminApp/LoginApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoginAdminApp/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoginAdminApp/LoginFXML.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Layouts/LoginFXML.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoginAdminApp/LoginModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginAdminApp/LoginModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MindPrimeDB.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/MindPrimeDB.db" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -38,6 +49,9 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/MindPrimePrueba$LoginApp__1_.ic" NAME="LoginApp (1) Coverage Results" MODIFIED="1542094549838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>LoginAdminApp.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MindPrimePrueba$LoginApp.ic" NAME="LoginApp Coverage Results" MODIFIED="1544049143274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Controllers.*</FILTER>
     </SUITE>
   </component>
   <component name="DatabaseView">
@@ -54,7 +68,12 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MindPrimeDB.db" type="feb32156:DbDataSourceImpl" />
+        <item name="MindPrimeDB2.db" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MindPrimeDB2.db" type="feb32156:DbDataSourceImpl" />
+        <item name="collations" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
     </expand>
     <select />
@@ -63,56 +82,59 @@
     <session id="320068576">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="16" />
+          <entry key="project.closed" value="28" />
           <entry key="project.open.time.15" value="2" />
-          <entry key="project.open.time.16" value="4" />
-          <entry key="project.open.time.17" value="3" />
+          <entry key="project.open.time.16" value="5" />
+          <entry key="project.open.time.17" value="4" />
+          <entry key="project.open.time.19" value="2" />
           <entry key="project.open.time.21" value="1" />
-          <entry key="project.open.time.22" value="1" />
-          <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.22" value="3" />
+          <entry key="project.open.time.23" value="4" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.26" value="2" />
           <entry key="project.open.time.27" value="1" />
-          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.34" value="1" />
-          <entry key="project.opened" value="19" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.99" value="1" />
+          <entry key="project.opened" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="MindPrimeDB" value="1" />
-          <entry key="db" value="23" />
-          <entry key="fxml" value="24" />
+          <entry key="db" value="35" />
+          <entry key="fxml" value="45" />
           <entry key="iml" value="1" />
-          <entry key="java" value="49" />
-          <entry key="sql" value="6" />
+          <entry key="java" value="86" />
+          <entry key="sql" value="12" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="49" />
-          <entry key="PLAIN_TEXT" value="24" />
-          <entry key="Scratch" value="6" />
-          <entry key="XML" value="25" />
+          <entry key="JAVA" value="86" />
+          <entry key="PLAIN_TEXT" value="36" />
+          <entry key="Scratch" value="12" />
+          <entry key="XML" value="46" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="18" />
-          <entry key="fxml" value="585" />
-          <entry key="java" value="6001" />
-          <entry key="sql" value="333" />
+          <entry key="fxml" value="751" />
+          <entry key="java" value="7679" />
+          <entry key="sql" value="405" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6001" />
+          <entry key="JAVA" value="7679" />
           <entry key="PLAIN_TEXT" value="18" />
-          <entry key="Scratch" value="333" />
-          <entry key="XML" value="585" />
+          <entry key="Scratch" value="405" />
+          <entry key="XML" value="751" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -124,10 +146,63 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LoginAdminApp/LoginController.java">
+        <entry file="file://$PROJECT_DIR$/src/DatabaseConnection/dbConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1392">
-              <caret line="77" selection-start-line="77" selection-end-line="77" />
+            <state relative-caret-position="432">
+              <caret line="20" column="5" selection-start-line="8" selection-start-column="4" selection-end-line="20" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Layouts/AdminFXML.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1968">
+              <caret line="82" column="11" selection-start-line="82" selection-start-column="11" selection-end-line="82" selection-end-column="11" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LoginAdminApp/LoginApp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#603#604#0" expanded="true" />
+                <element signature="e#631#632#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Layouts/LoginFXML.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Layouts/AddNewWord.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="10" column="174" selection-start-line="10" selection-start-column="126" selection-end-line="10" selection-end-column="174" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controllers/AdminController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1464">
+              <caret line="71" column="9" selection-start-line="57" selection-start-column="8" selection-end-line="71" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -136,84 +211,39 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Instructions/FocusPoint.fxml">
+        <entry file="file://$PROJECT_DIR$/src/Controllers/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="384">
+              <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
             </state>
           </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Admin/AdminFXML.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="17" column="163" selection-start-line="17" selection-start-column="126" selection-end-line="17" selection-end-column="163" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/01bda24b-b65d-4f53-acfd-6998b57fc069/console.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Instructions/FamiliarityWord.fxml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Instructions/FamiliarityInstruction.fxml">
+        <entry file="file://$PROJECT_DIR$/src/Controllers/FamiliarityInstructionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Admin/AdminController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1464">
-              <caret line="79" column="30" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="744">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Instructions/PrimingInstruction.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LoginAdminApp/LoginFXML.fxml">
+        <entry file="file://$PROJECT_DIR$/src/Controllers/PrimingInstructionController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="576">
-              <caret line="24" column="68" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
+              <caret line="29" column="9" selection-start-line="11" selection-start-column="8" selection-end-line="29" selection-end-column="9" />
             </state>
           </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LoginAdminApp/LoginModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="888">
+              <caret line="43" column="25" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -233,6 +263,10 @@
       <find>SelectApp</find>
       <find>system</find>
       <find>DATE</find>
+      <find>event</find>
+      <find>setTime</find>
+      <find>setTimer</find>
+      <find>play</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -241,15 +275,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/SQLiteJDBCDriverConncetion.java" />
-        <option value="$PROJECT_DIR$/src/Conector.java" />
-        <option value="$PROJECT_DIR$/src/DbConnection.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/ff2fb087-5f30-4a35-a73e-cf8637340ec7/console.sql" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a33f73d4-8ac1-4c28-ae9b-d711f3cfb623/console.sql" />
-        <option value="$PROJECT_DIR$/src/SQLiteJDBCDriverConnection.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/SelectApp.java" />
-        <option value="$PROJECT_DIR$/../Mindprime-danielvaldezs-login/admin_interface.java" />
         <option value="$PROJECT_DIR$/src/admin_interface.java" />
         <option value="$PROJECT_DIR$/src/LoginAdminInterface.java" />
         <option value="$PROJECT_DIR$/src/dbConnection.java" />
@@ -269,19 +294,38 @@
         <option value="$PROJECT_DIR$/../../../../Downloads/ajedrezPro1-1.java" />
         <option value="$PROJECT_DIR$/src/ajedrezPro1.java" />
         <option value="$PROJECT_DIR$/src/User/User.java" />
-        <option value="$PROJECT_DIR$/src/LoginAdminApp/LoginFXML.fxml" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a33f73d4-8ac1-4c28-ae9b-d711f3cfb623/console_1.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/c7780538-b459-4b74-95f2-edb3a8eb6d2a/console.sql" />
-        <option value="$PROJECT_DIR$/src/DatabaseConnection/dbConnection.java" />
-        <option value="$PROJECT_DIR$/src/LoginAdminApp/LoginModel.java" />
         <option value="$PROJECT_DIR$/src/Admin/AdminFXML.fxml" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/01bda24b-b65d-4f53-acfd-6998b57fc069/console.sql" />
         <option value="$PROJECT_DIR$/src/Instructions/FocusPoint.fxml" />
         <option value="$PROJECT_DIR$/src/Instructions/FamiliarityWord.fxml" />
         <option value="$PROJECT_DIR$/src/Instructions/PrimingInstruction.fxml" />
-        <option value="$PROJECT_DIR$/src/LoginAdminApp/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/Admin/AdminController.java" />
         <option value="$PROJECT_DIR$/src/Instructions/FamiliarityInstruction.fxml" />
+        <option value="$PROJECT_DIR$/src/LoginAdminApp/LoginFXML.fxml" />
+        <option value="$PROJECT_DIR$/src/LoginAdminApp/LoginModel.java" />
+        <option value="$PROJECT_DIR$/src/FocusPoint/FocusPointController.java" />
+        <option value="$PROJECT_DIR$/src/FamiliarityWord/FamiliarityWordController.java" />
+        <option value="$PROJECT_DIR$/src/FamiliarityInstruction/FamiliarityInstruction.fxml" />
+        <option value="$PROJECT_DIR$/src/FamiliarityInstruction/FamiliarityInstructionController.java" />
+        <option value="$PROJECT_DIR$/src/Admin/AdminController.java" />
+        <option value="$PROJECT_DIR$/src/LoginAdminApp/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/Controllers/PrimingInstructionController.java" />
+        <option value="$PROJECT_DIR$/src/Layouts/primingWord.fxml" />
+        <option value="$PROJECT_DIR$/src/Layouts/AdminFXML.fxml" />
+        <option value="$PROJECT_DIR$/src/Layouts/AddNewWord.fxml" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/aaf3f30e-dd43-410c-a5c2-e4b7fa2743d5/console_1.sql" />
+        <option value="$PROJECT_DIR$/src/Controllers/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/DatabaseConnection/dbConnection.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/01bda24b-b65d-4f53-acfd-6998b57fc069/console_1.sql" />
+        <option value="$PROJECT_DIR$/src/Layouts/FocusPoint.fxml" />
+        <option value="$PROJECT_DIR$/src/Layouts/FamiliarityInstruction.fxml" />
+        <option value="$PROJECT_DIR$/src/Controllers/FamiliarityInstructionController.java" />
+        <option value="$PROJECT_DIR$/src/Controllers/FocusPointController.java" />
+        <option value="$PROJECT_DIR$/src/Layouts/FamiliarityWord.fxml" />
+        <option value="$PROJECT_DIR$/src/Controllers/FamiliarityWordController.java" />
+        <option value="$PROJECT_DIR$/src/Controllers/AddNewWordController.java" />
+        <option value="$PROJECT_DIR$/src/Controllers/AdminController.java" />
       </list>
     </option>
   </component>
@@ -291,10 +335,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="951" />
-    <option name="width" value="978" />
-    <option name="height" value="1039" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
+    <option name="width" value="1520" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -302,6 +346,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -318,13 +364,19 @@
               <item name="MindPrimePrueba" type="b2602c69:ProjectViewProjectNode" />
               <item name="MindPrimePrueba" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Admin" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MindPrimePrueba" type="b2602c69:ProjectViewProjectNode" />
               <item name="MindPrimePrueba" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Instructions" type="462c0819:PsiDirectoryNode" />
+              <item name="DatabaseConnection" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MindPrimePrueba" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MindPrimePrueba" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Layouts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MindPrimePrueba" type="b2602c69:ProjectViewProjectNode" />
@@ -334,20 +386,12 @@
             </path>
             <path>
               <item name="MindPrimePrueba" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MindPrimePrueba" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MindPrimePrueba" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -355,20 +399,23 @@
     <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543483521426" />
-    <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Pruebita/prueba/MindPrimePrueba" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547161173388" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../zip" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="database.main" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Users\Fiorella\Desktop\CETYS5\DISENO SOFTWARE\MindPrimePrueba\src\LoginAdminApp" />
-      <recent name="D:\Users\Fiorella\Desktop\CETYS5\DISENO SOFTWARE\MindPrimePrueba\src\LoginApp" />
+      <recent name="D:\Users\Fiorella\Desktop\CETYS5\DISENO SOFTWARE\MindPrimePrueba\src\Layouts" />
+      <recent name="D:\Users\Fiorella\Desktop\CETYS5\DISENO SOFTWARE\MindPrimePrueba\src\PrimingInstruction" />
+      <recent name="D:\Users\Fiorella\Desktop\CETYS5\DISENO SOFTWARE\MindPrimePrueba\src\FocusPoint" />
+      <recent name="D:\Users\Fiorella\Desktop\CETYS5\DISENO SOFTWARE\MindPrimePrueba\src\FamiliarityWord" />
+      <recent name="D:\Users\Fiorella\Desktop\CETYS5\DISENO SOFTWARE\MindPrimePrueba\src\FamiliarityInstruction" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -407,6 +454,19 @@
     <configuration name="LoginApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="LoginAdminApp.LoginApp" />
       <module name="MindPrimePrueba" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LoginAdminApp.LoginApp" />
+      <module name="MindPrimePrueba" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -417,12 +477,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="admin_interface (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="admin_interface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="LoginAdminApp.admin_interface" />
       <module name="MindPrimePrueba" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="LoginAdminApp.*" />
+          <option name="PATTERN" value="Controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -438,17 +498,17 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.admin_interface" />
       <item itemvalue="Application.admin_interface (1)" />
       <item itemvalue="Application.LoginApp" />
-      <item itemvalue="Application.LoginApp (1)" />
-      <item itemvalue="Application.admin_interface (2)" />
       <item itemvalue="Application.ajedrezPro1" />
+      <item itemvalue="Application.LoginApp (1)" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.LoginApp (1)" />
+        <item itemvalue="Application.admin_interface" />
         <item itemvalue="Application.ajedrezPro1" />
-        <item itemvalue="Application.admin_interface (2)" />
         <item itemvalue="Application.LoginApp" />
         <item itemvalue="Application.admin_interface (1)" />
       </list>
@@ -482,15 +542,27 @@
       <workItem from="1543346679389" duration="1264000" />
       <workItem from="1543358017996" duration="313000" />
       <workItem from="1543458807870" duration="6680000" />
-      <workItem from="1543557935267" duration="598000" />
+      <workItem from="1543557935267" duration="1050000" />
+      <workItem from="1543782560809" duration="598000" />
+      <workItem from="1543873698617" duration="635000" />
+      <workItem from="1543991128584" duration="7859000" />
+      <workItem from="1544002387146" duration="1452000" />
+      <workItem from="1544029896904" duration="14054000" />
+      <workItem from="1544049445799" duration="4072000" />
+      <workItem from="1544053561273" duration="3032000" />
+      <workItem from="1544431139666" duration="260000" />
+      <workItem from="1547107696124" duration="1558000" />
+      <workItem from="1547133906791" duration="8974000" />
+      <workItem from="1547171753255" duration="639000" />
+      <workItem from="1549051471568" duration="603000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88231000" />
+    <option name="totallyTimeSpent" value="132419000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
@@ -498,24 +570,24 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.19261745" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.19395973" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="1" />
-      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5013423" side_tool="true" weight="0.41055718" />
-      <window_info anchor="bottom" id="Database Changes" order="3" />
-      <window_info anchor="bottom" id="Database Console" order="4" sideWeight="0.49731544" visible="true" weight="0.3196481" />
+      <window_info anchor="bottom" id="Version Control" order="0" weight="0.32991204" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.32991204" />
+      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.25771812" side_tool="true" visible="true" weight="0.32844576" />
+      <window_info anchor="bottom" id="Database Changes" order="3" weight="0.32991204" />
+      <window_info anchor="bottom" id="Database Console" order="4" sideWeight="0.4966443" weight="0.3900293" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" sideWeight="0.49932885" visible="true" weight="0.32844576" />
-      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.4986577" weight="0.4090909" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" sideWeight="0.74228185" visible="true" weight="0.32844576" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.398827" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32258064" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49932885" weight="0.32258064" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="12" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Theme Preview" order="1" />
-      <window_info anchor="right" id="Database" order="2" visible="true" weight="0.13624161" />
+      <window_info anchor="right" id="Database" order="2" weight="0.10067114" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="right" id="Palette" order="5" />
@@ -564,28 +636,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/SQLiteJDBCDriverConncetion.java" />
-    <entry file="file://$PROJECT_DIR$/src/Conector.java" />
-    <entry file="file://$PROJECT_DIR$/MindPrime.db" />
-    <entry file="file://$PROJECT_DIR$/MindPrimee.db" />
-    <entry file="file://$PROJECT_DIR$/../../../../Downloads/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-598">
-          <caret line="11" column="61" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SelectApp.java" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ff2fb087-5f30-4a35-a73e-cf8637340ec7/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="20" selection-start-column="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LoginAdminInterface.java" />
-    <entry file="file://$PROJECT_DIR$/src/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/SQLiteJDBCDriverConnection.java" />
     <entry file="file://$PROJECT_DIR$/src/LoginAdminInterface/fxml.java" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a33f73d4-8ac1-4c28-ae9b-d711f3cfb623/console.sql">
       <provider selected="true" editor-type-id="text-editor">
@@ -604,13 +654,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../Downloads/ajedrezPro1-1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="469" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../Downloads/ajedrezPro1-1.java" />
     <entry file="file://$PROJECT_DIR$/src/ajedrezPro1.java" />
     <entry file="file://$PROJECT_DIR$/src/User/UserModel.java" />
     <entry file="file://$PROJECT_DIR$/src/user_interface.java" />
@@ -630,58 +674,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MindPrimeDB" />
     <entry file="file://$PROJECT_DIR$/src/MindPrime.db" />
-    <entry file="file://$PROJECT_DIR$/src/DatabaseConnection/dbConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Admin/UserData.java" />
-    <entry file="file://$PROJECT_DIR$/src/User/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LoginAdminApp/LoginApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2304" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MindPrimeDB.db" />
+    <entry file="file://$PROJECT_DIR$/MindPrimeDb.db" />
     <entry file="file://$PROJECT_DIR$/MindPrimePrueba.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MindPrimeDB.db">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/event/EventHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="28" lean-forward="true" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+        <state relative-caret-position="307">
+          <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LoginAdminApp/LoginModel.java">
+    <entry file="file://$PROJECT_DIR$/src/User/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/User/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+        <state relative-caret-position="48">
+          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -693,24 +706,71 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/event/EventHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/User/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+        <state relative-caret-position="168">
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LoginAdminApp/LoginController.java">
+    <entry file="file://$PROJECT_DIR$/src/Controllers/PrimingWordController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1392">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="48">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Instructions/FocusPoint.fxml">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/aaf3f30e-dd43-410c-a5c2-e4b7fa2743d5/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MindPrimeDB (1) .db" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/aaf3f30e-dd43-410c-a5c2-e4b7fa2743d5/console_1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9798797d-884d-427a-8ff9-fff8c50fd6d7/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MindPrimeDB(1).db" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/01bda24b-b65d-4f53-acfd-6998b57fc069/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/01bda24b-b65d-4f53-acfd-6998b57fc069/console_1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="19" selection-start-column="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/animation/Animation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="900" column="20" selection-start-line="900" selection-start-column="16" selection-end-line="900" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/FocusPointController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="36" column="54" lean-forward="true" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/FamiliarityWordController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Layouts/FocusPoint.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
@@ -718,62 +778,139 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Admin/AdminFXML.fxml">
+    <entry file="file://$PROJECT_DIR$/src/Layouts/FamiliarityInstruction.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="17" column="163" selection-start-line="17" selection-start-column="126" selection-end-line="17" selection-end-column="163" />
+        <state relative-caret-position="384">
+          <caret line="16" column="74" selection-start-line="16" selection-start-column="74" selection-end-line="16" selection-end-column="74" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/01bda24b-b65d-4f53-acfd-6998b57fc069/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Instructions/FamiliarityWord.fxml">
+    <entry file="file://$PROJECT_DIR$/src/Layouts/FamiliarityWord.fxml">
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+        <state relative-caret-position="240">
+          <caret line="10" column="146" selection-start-line="10" selection-start-column="146" selection-end-line="10" selection-end-column="146" />
         </state>
       </provider>
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Admin/AdminController.java">
+    <entry file="file://$PROJECT_DIR$/src/Layouts/PrimingInstruction.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Layouts/PrimingWord.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/AddNewWordController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-82">
+          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MindPrimeDB.db">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1486">
+          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MindPrimeDB2.db">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DatabaseConnection/dbConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="20" column="5" selection-start-line="8" selection-start-column="4" selection-end-line="20" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Layouts/AdminFXML.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1968">
+          <caret line="82" column="11" selection-start-line="82" selection-start-column="11" selection-end-line="82" selection-end-column="11" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LoginAdminApp/LoginApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#603#604#0" expanded="true" />
+            <element signature="e#631#632#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Layouts/LoginFXML.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Layouts/AddNewWord.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="174" selection-start-line="10" selection-start-column="126" selection-end-line="10" selection-end-column="174" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1464">
-          <caret line="79" column="30" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="30" />
+          <caret line="71" column="9" selection-start-line="57" selection-start-column="8" selection-end-line="71" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Instructions/PrimingInstruction.fxml">
+    <entry file="file://$PROJECT_DIR$/src/Controllers/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+        <state relative-caret-position="384">
+          <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LoginAdminApp/LoginFXML.fxml">
+    <entry file="file://$PROJECT_DIR$/src/Controllers/PrimingInstructionController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
-          <caret line="24" column="68" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
+          <caret line="29" column="9" selection-start-line="11" selection-start-column="8" selection-end-line="29" selection-end-column="9" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Instructions/FamiliarityInstruction.fxml">
+    <entry file="file://$PROJECT_DIR$/src/LoginAdminApp/LoginModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+        <state relative-caret-position="888">
+          <caret line="43" column="25" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/FamiliarityInstructionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="744">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">

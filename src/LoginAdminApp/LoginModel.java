@@ -9,6 +9,7 @@ import java.sql.SQLException;
 public class LoginModel {
 
     Connection connection;
+
     public LoginModel(){
         try{
             this.connection = dbConnection.getConnection();
@@ -23,21 +24,21 @@ public class LoginModel {
     public boolean isDatabaseConnected(){
         return this.connection != null;
     }
+
     public boolean isLogin(String adminame, String pass) throws Exception{
 
-        PreparedStatement pr = null;
-        ResultSet rs = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
 
-        String sqlSelect = "SELECT * FROM ADMIN where adminName = ? and password =?";
-        //firstName y password son los nombres de las variables en las tablas sqlite
+        String sqlSelect = "SELECT * FROM ADMIN where adminName = ? and password =?"; //firstName and password are the name of the attributes in sqlite
         try{
-            pr = this.connection.prepareStatement(sqlSelect);
-            pr.setString(1,adminame);
-            pr.setString(2,pass);
+            preparedStatement = this.connection.prepareStatement(sqlSelect);
+            preparedStatement.setString(1,adminame);
+            preparedStatement.setString(2,pass);
 
-            rs = pr.executeQuery();
+            resultSet = preparedStatement.executeQuery();
 
-            if(rs.next()){
+            if(resultSet.next()){
                 return true;
             }
             return false;
@@ -46,8 +47,8 @@ public class LoginModel {
             return false;
         }
         finally {
-                pr.close();
-                rs.close();
+                preparedStatement.close();
+                resultSet.close();
         }
     }
 }

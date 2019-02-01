@@ -6,10 +6,10 @@ import java.sql.SQLException;
 
 public class dbConnection {
 
-    private static final String SQLCONNECTION = "jdbc:sqlite:D:\\Users\\Fiorella\\Desktop\\CETYS5\\DISENO SOFTWARE\\MindPrimePrueba\\src\\MindPrimeDB.db";
+    private static final String SQLCONNECTION = "jdbc:sqlite:D:\\Users\\Fiorella\\Desktop\\CETYS5\\DISENO SOFTWARE\\MindPrimePrueba\\src\\MindPrimeDB2.db";
 
     public static Connection getConnection() throws SQLException {
-        Connection connector = null;
+        Connection conn = null;
 
         try {
             Class.forName("org.sqlite.JDBC");

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MindPrimeDB.db" uuid="01bda24b-b65d-4f53-acfd-6998b57fc069">
+    <data-source name="MindPrimeDB2.db" uuid="01bda24b-b65d-4f53-acfd-6998b57fc069">
       <database-info product="SQLite" version="3.25.1" jdbc-version="2.1" driver-name="SQLite JDBC" driver-version="3.25.1" family="SQLITE" exact-version="3.25.1">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>

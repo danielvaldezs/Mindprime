@@ -1,4 +1,4 @@
-package main;
+package classes;
 
 public class PrimingActivity {
 

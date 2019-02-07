@@ -1,4 +1,6 @@
-package main;
+package controller;
+
+import database.DatabaseConnection;
 import java.sql.Connection;
 import java.sql.SQLException;
 

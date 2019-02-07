@@ -1,4 +1,4 @@
-package main;
+package database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,8 +7,8 @@ import java.sql.SQLException;
 public class DatabaseConnection {
 
 	public Connection connect() {
-		// SQLite connection string
-		String url = "jdbc:sqlite:C:/Users/FernandoHdz/Documents/dev/mindPrimeProject/MindPrimeDB.db";
+		String path = System.getProperty("user.dir"); // Get current local directory
+		String url = "jdbc:sqlite:" + path + "/src/database/MindPrimeDB.db"; // SQLite connection string
 		Connection conn = null;
 		try {
 			conn = DriverManager.getConnection(url);

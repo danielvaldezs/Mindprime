@@ -8,7 +8,7 @@ public class DatabaseConnection {
 
 	public Connection connect() {
 		String path = System.getProperty("user.dir"); // Get current local directory
-		String url = "jdbc:sqlite:" + path + "/src/database/MindPrimeDB.db"; // SQLite connection string
+		String url = "jdbc:sqlite:" + path + "/src/database/MindPrimeDB.db"; // SQLite url para hacer conexion
 		Connection conn = null;
 		try {
 			conn = DriverManager.getConnection(url);

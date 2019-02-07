@@ -15,15 +15,16 @@ public class Main {
 		try (Connection conn = dbConnection.connect()) {
 			System.out.println("Connection to database has been established!");
 
+			// Obtener palabras de la base de datos
 			String[] palabras = selectMainWords.selectWords(dbConnection.connect());
 			for (int i = 0; i < palabras.length; i++) {
 				System.out.println(palabras[i]);
 			}
 
 			HideWords actividadPriming = new HideWords();
-			String palabraAleatoria = actividadPriming.getRandomWord(palabras);
-			System.out.println("palabra aleatoria: " + palabraAleatoria);
-			System.out.println(actividadPriming.manipulateWord(palabraAleatoria));
+			String palabraAleatoria = actividadPriming.getRandomWord(palabras); // Obtener palabra aleatoria
+			System.out.println("palabra aleatoria: " + palabraAleatoria); // 
+			System.out.println(actividadPriming.manipulateWord(palabraAleatoria)); // Imprimir palabra con letras ocultas
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}

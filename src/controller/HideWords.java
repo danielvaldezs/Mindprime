@@ -1,7 +1,8 @@
 package controller;
 
 public class HideWords {
-
+	
+	// Metodo para obtener una palabra aleatoria
 	public String getRandomWord(String palabras[]) {
 
 		int longitudPalabras = palabras.length; // Conocer la longitud del arreglo de palabras
@@ -9,7 +10,8 @@ public class HideWords {
 																		// longitud del arreglo
 		return palabras[numeroAleatorio]; // Obtener palabra aleatoria
 	}
-
+	
+	// Metodo para establecer la posicion de las letras a ocultar
 	public String manipulateWord(String palabraSeleccionada) {
 
 		int removePositions[];
@@ -46,10 +48,9 @@ public class HideWords {
 
 //		String palabraManipulada = replaceCharAt(palabraSeleccionada, removePositions, replaceChar);
 		return replaceCharAt(palabraSeleccionada, removePositions, replaceChar);
-
-//		System.out.println(palabraManipulada);
 	}
 
+	// Metodo para remplazar las letras indicadas por el caracter establecido
 	public static String replaceCharAt(String palabra, int positions[], char replaceChar) {
 
 		StringBuilder nuevaPalabra = new StringBuilder(palabra);

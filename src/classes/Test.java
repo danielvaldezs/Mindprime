@@ -2,15 +2,13 @@ package classes;
 
 public class Test {
 
-	private String correctAnswer;
-	private String failedAnswer;
-	private float finalTime;
+	private String correctAnswers;
+	private String dateDone;
 	private int idUser;
 
-	public Test(String correctAnswer, String failedAnswer, float finalTime, int idUser) {
-		this.correctAnswer = correctAnswer;
-		this.failedAnswer = failedAnswer;
-		this.finalTime = finalTime;
+	public Test(String correctAnswers, String dateDone, int idUser) {
+		this.correctAnswers = correctAnswers;
+		this.dateDone = dateDone;
 		this.idUser = idUser;
 	}
 
@@ -22,34 +20,25 @@ public class Test {
 		this.idUser = idUser;
 	}
 
-	public String getCorrectAnswer() {
-		return correctAnswer;
+	public String getCorrectAnswers() {
+		return correctAnswers;
 	}
 
-	public void setCorrectAnswer(String correctAnswer) {
-		this.correctAnswer = correctAnswer;
+	public void setCorrectAnswers(String correctAnswers) {
+		this.correctAnswers = correctAnswers;
 	}
 
-	public String getFailedAnswer() {
-		return failedAnswer;
+	public String getDateDone() {
+		return dateDone;
 	}
-
-	public void setFailedAnswer(String failedAnswer) {
-		this.failedAnswer = failedAnswer;
-	}
-
-	public float getFinalTime() {
-		return finalTime;
-	}
-
-	public void setFinalTime(float finalTime) {
-		this.finalTime = finalTime;
+	
+	public void setDateDone(String dateDone) {
+		this.dateDone = dateDone;
 	}
 
 	@Override
 	public String toString() {
-		return "Test [correctAnswer=" + correctAnswer + ", failedAnswer=" + failedAnswer + ", finalTime=" + finalTime
-				+ ", idUser=" + idUser + "]";
+		return "Test [correctAnswers=" + correctAnswers + ", dateDone=" + dateDone + ", idUser=" + idUser + "]";
 	}
 
 }

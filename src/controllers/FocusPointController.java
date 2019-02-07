@@ -1,4 +1,4 @@
-package Controllers;
+package controllers;
 
 import Controllers.AdminController;
 import javafx.animation.KeyFrame;

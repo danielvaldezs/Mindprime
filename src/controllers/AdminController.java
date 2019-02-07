@@ -1,4 +1,4 @@
-package Controllers;
+package controllers;
 
 import DatabaseConnection.dbConnection;
 import javafx.event.ActionEvent;

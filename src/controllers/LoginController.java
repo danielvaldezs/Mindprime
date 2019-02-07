@@ -1,4 +1,4 @@
-package Controllers;
+package controllers;
 import Controllers.AdminController;
 import LoginAdminApp.LoginModel;
 import javafx.event.ActionEvent;

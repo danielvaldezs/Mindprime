@@ -1,8 +1,11 @@
-package controller;
+package main;
 
 import database.DatabaseConnection;
 import java.sql.Connection;
 import java.sql.SQLException;
+
+import controllers.hideletters.HideWords;
+import controllers.hideletters.SelectMainWords;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package controller;
+package controllers.hideletters;
 
 public class HideWords {
 	

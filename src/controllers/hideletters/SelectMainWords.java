@@ -1,4 +1,4 @@
-package controller;
+package controllers.hideletters;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

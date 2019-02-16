@@ -5,11 +5,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+
 public class SelectMainWords {
 
 	// Metodo para leer palabras de la base de datos
 	public String[] selectWords(Connection connection) {
-
+		
 		String palabras[] = new String[6]; // Arreglo para almacenar palabras de la base de datos
 		String sql = "SELECT idWord, word, category, quantitySyllables " + "from Word " + "where mainWord = true "
 				+ "order by random() " + "limit 6"; // SQL Query para leer las palabras

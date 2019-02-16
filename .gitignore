@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 # Created by https://www.gitignore.io/api/java
 # Edit at https://www.gitignore.io/?templates=java
 
@@ -24,10 +23,10 @@
 *.zip
 *.tar.gz
 *.rar
-
+.idea
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
 # End of https://www.gitignore.io/api/java
->>>>>>> fernando
+
 /bin/

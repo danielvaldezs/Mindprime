@@ -9,7 +9,7 @@ public class MainHideLetters {
 	// Se realizara la busqueda de palabras y se seleccionara una de manera
 	// aleatoria.
 	// Se elegiran de forma aleatoria los caracteres a ocultar.
-	public void hideLetters() {
+	public static void main(String[] args) {
 	
 		DatabaseConnection dbConnection = new DatabaseConnection();
 		SelectMainWords selectMainWords = new SelectMainWords();

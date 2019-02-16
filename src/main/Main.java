@@ -12,17 +12,17 @@ public class Main {
 		// TODO Auto-generated method stub
 
 		DatabaseConnection dbConnection = new DatabaseConnection();
-		MainHideLetters hideLetters = new MainHideLetters();
-
-		try (Connection conn = dbConnection.connect()) {
-			System.out.println("Connection to database has been established!");
+		dbConnection.connect();
+		
+//		try (Connection conn = dbConnection.connect()) {
+//			System.out.println("Connection to database has been established!");
 
 			// Tarea: Ocultar letras de las palabras
-			hideLetters.hideLetters();
+//			hideLetters.hideLetters();
 			
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
+//		} catch (SQLException e) {
+//			System.out.println(e.getMessage());
+//		}
 	}
 
 }

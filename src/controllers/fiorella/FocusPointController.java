@@ -1,6 +1,6 @@
 package controllers.fiorella;
 
-import Controllers.AdminController;
+import controllers.fiorella.AdminController;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXMLLoader;

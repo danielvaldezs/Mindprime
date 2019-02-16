@@ -2,6 +2,9 @@ package controllers.hideletters;
 
 import database.DatabaseConnection;
 import controllers.hideletters.SelectMainWords;
+
+import java.sql.SQLException;
+
 import controllers.hideletters.HideLetters;
 
 public class MainHideLetters {
@@ -11,11 +14,10 @@ public class MainHideLetters {
 	// Se elegiran de forma aleatoria los caracteres a ocultar.
 	public static void main(String[] args) {
 	
-		DatabaseConnection dbConnection = new DatabaseConnection();
 		SelectMainWords selectMainWords = new SelectMainWords();
 		HideLetters actividadPriming = new HideLetters();
 		
-		String[] palabras = selectMainWords.selectWords(dbConnection.connect());
+		String[] palabras = selectMainWords.selectWords(DatabaseConnection.connect());
 		
 		System.out.println("Palabras obtenidas de la base de datos: ");
 		for (int i = 0; i < palabras.length; i++) {

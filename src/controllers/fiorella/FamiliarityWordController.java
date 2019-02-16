@@ -1,6 +1,6 @@
 package controllers.fiorella;
 
-import Controllers.AdminController;
+import controllers.fiorella.AdminController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;

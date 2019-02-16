@@ -1,6 +1,6 @@
 package controllers.fiorella;
 
-import DatabaseConnection.dbConnection;
+import database.DatabaseConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -57,7 +57,7 @@ public class AdminController {
     public void addUser(){
         String sqlInsert = "INSERT INTO User (firstname, lastname, institution,userGroup,birthdate) VALUES (?,?,?,?,?)";
         try{
-            Connection connect = dbConnection.getConnection();
+            Connection connect = DatabaseConnection.connect();
             PreparedStatement sqlStatement = connect.prepareStatement(sqlInsert);
             sqlStatement.setString(1,this.nameId.getText());
             sqlStatement.setString(2,this.lastnameId.getText());

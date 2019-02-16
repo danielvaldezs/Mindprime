@@ -1,6 +1,5 @@
-package LoginAdminApp;
+package login.admin.app;
 
-import DatabaseConnection.dbConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,11 +10,11 @@ public class LoginModel {
     Connection connection;
 
     public LoginModel(){
-        try{
-            this.connection = dbConnection.getConnection();
-        }catch (SQLException ex){
-            ex.printStackTrace();
-        }
+//        try{
+//            this.connection = DatabaseConnection.connect();
+//        }catch (SQLException ex){
+//            ex.printStackTrace();
+//        }
         if(this.connection == null){
             System.exit(1);
         }

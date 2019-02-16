@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DatabaseConnection {
 
-	public Connection connect() {
+	public static Connection connect() {
 		
 		Connection conn = null;
 		String path = System.getProperty("user.dir"); // Get current local directory

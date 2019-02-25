@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Controllers.PrimingInstructionController"
+            prefHeight="400.0" prefWidth="600.0">
+    <children>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="129.0" layoutY="241.0" text="Instrucciones: Escoge la palabra que consideres correcta" textAlignment="CENTER">
+            <font>
+                <Font size="28.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="75.0" fitWidth="81.0" layoutX="821.0" layoutY="602.0">
+            <image>
+                <Image url="resources/arrowLeft.png" />
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>

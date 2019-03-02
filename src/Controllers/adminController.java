@@ -63,7 +63,15 @@ public class adminController {
     }
 
 
-
+    public void NoBlankSpaces(KeyEvent evt){
+        char c =evt.getCharacter().charAt(0);
+        TextField txt = (TextField) evt.getSource();
+        if (Character.equals(c) == (""))
+        {
+            evt.consume();
+            JOptionPane.showMessageDialog(this, "No puede dejar el campo vacío")
+        }
+    }
 
     /*
     Este es un metodo diferente para no dejar espacios en blanco
@@ -85,7 +93,6 @@ public class adminController {
         char c = evt.getCharacter().charAt(0);
         TextField txt = (TextField) evt.getSource();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        dateFormat.setLenient(false);
         try
         {
             dateFormat.parse(Character.trim(c));
@@ -97,8 +104,24 @@ public class adminController {
         }
     }
 
+    public void{
+
+    }
+
+if(JRadioButton1.isSelected()==false && JRadioButton2.isSelected()==false)
+    {
+        JOptionPane.showMessageDialog(null,"No selecciono ninguna opción");
+    }
 
 
 
+ppublic void ValidateFields (KeyEvent evt)
+{
+    TextField txt = (TextField) evt.getSource();
+        if(nameId.getText().equals == ("") &&  lastnameId.getText().equals == ("") && birthDateId.getText().equals == ("") && institutionId.getText().equals == ("")
+    {
+        JOptionPane.showMessageDialog(null,"Se tienen que completar todos los campos ");
+    }
+}
 
 }

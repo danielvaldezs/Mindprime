@@ -14,7 +14,7 @@
             <Font size="28.0" />
          </font>
       </Label>
-       <Button layoutX="814.0" layoutY="564.0" onAction="#showFocusPoint" >
+       <Button fx:id="imageButton" layoutX="814.0" layoutY="564.0" onAction="#showFocusPoint" >
 
            <graphic>
              <ImageView fitHeight="98.0" fitWidth="77.0" layoutX="824.0" layoutY="564.0" pickOnBounds="true" preserveRatio="true">

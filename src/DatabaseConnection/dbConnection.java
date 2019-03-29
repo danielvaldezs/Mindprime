@@ -6,10 +6,10 @@ import java.sql.SQLException;
 
 public class dbConnection {
 
-    private static final String SQLCONNECTION = "jdbc:sqlite:D:\\Users\\Fiorella\\Desktop\\CETYS5\\DISENO SOFTWARE\\MindPrimePrueba\\src\\MindPrimeDB2.db";
-
     public static Connection getConnection() throws SQLException {
         Connection conn = null;
+        String path = System.getProperty("user.dir");
+        String SQLCONNECTION = "jdbc:sqlite:" + path +"/src/DatabaseConnection/MindPrimeDBCambios.db";
 
         try {
             Class.forName("org.sqlite.JDBC");

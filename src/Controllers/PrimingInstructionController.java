@@ -29,7 +29,7 @@ public class PrimingInstructionController {
             }
         }
 
-        public void closeFamiliarityInstruction(){
-            this.primingInstructionStage.close();
-        }
+//        public void closeFamiliarityInstruction(){
+//            this.primingInstructionStage.close();
+//        }
 }

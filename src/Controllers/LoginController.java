@@ -1,9 +1,10 @@
 package Controllers;
-import Controllers.AdminController;
-import LoginAdminApp.LoginModel;
+import DatabaseConnection.dbConnection;
+import LoginAdminApp.MainApp;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -14,11 +15,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class LoginController  {
+public class LoginController implements Initializable {
 
-    LoginModel loginModel = new LoginModel();
     Stage adminStage = new Stage();
 
     @FXML private Label dbStatusId;
@@ -26,21 +30,55 @@ public class LoginController  {
     @FXML private PasswordField passwordId;
     @FXML private Button signInButtonId;
     @FXML private Label loginStatusId;
-//    @Override
 
-    public void initialize(URL url, ResourceBundle rb) {
-        if(this.loginModel.isDatabaseConnected()){
-            this.dbStatusId.setText("Database connected");
-        }else{
-            this.dbStatusId.setText("Database NOT connected");
+    Connection connection;
+
+    public LoginController(){
+        try{
+            this.connection = dbConnection.getConnection();
+        }catch (SQLException ex){
+            ex.printStackTrace();
+        }
+        if(this.connection == null){
+            System.exit(1);
         }
     }
 
+    public boolean isDatabaseConnected(){
+        return this.connection != null;
+    }
+
+    public boolean isLogin(String adminame, String pass) throws Exception{
+
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        String sqlSelect = "SELECT * FROM ADMIN where adminName = ? and password =?"; //firstName and password are the name of the attributes in sqlite
+        try{
+            preparedStatement = this.connection.prepareStatement(sqlSelect);
+            preparedStatement.setString(1,adminame);
+            preparedStatement.setString(2,pass);
+
+            resultSet = preparedStatement.executeQuery();
+
+            if(resultSet.next()){
+                return true;
+            }
+            return false;
+        }
+        catch (SQLException ex){
+            return false;
+        }
+        finally {
+            preparedStatement.close();
+            resultSet.close();
+        }
+    }
 
     @FXML
     public void Login(ActionEvent event){
         try{
-            if(this.loginModel.isLogin(this.usernameId.getText(),this.passwordId.getText())){
+            if(isLogin(this.usernameId.getText(),this.passwordId.getText())){
                 Stage stage = (Stage)this.signInButtonId.getScene().getWindow();
                 stage.close();
                 adminLogin();
@@ -58,7 +96,7 @@ public class LoginController  {
         try{
 
             FXMLLoader adminLoader = new FXMLLoader();
-            Pane adminRoot = (Pane)adminLoader.load(getClass().getResource("/Layouts/AdminFXML.fxml").openStream());
+            Pane adminRoot = (Pane)adminLoader.load(getClass().getResource("/Layouts/Admin.fxml").openStream());
 
             AdminController adminController = (AdminController)adminLoader.getController();
             Scene scene = new Scene(adminRoot);
@@ -66,16 +104,13 @@ public class LoginController  {
             adminStage.setTitle("Admin Dashboard");
             adminStage.setResizable(false);
             adminStage.show();
-
-
-
         }catch (IOException ex){
             ex.printStackTrace();
         }
     }
-    public void adminLoginClose(){
-        this.adminStage.close();
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
     }
-
-
 }

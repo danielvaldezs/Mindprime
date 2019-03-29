@@ -7,16 +7,16 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class FamiliarityActivityController {
+public class PrimingActivityController {
 
-    Stage familiarityWordStage = new Stage();
+    Stage primingActivityStage = new Stage();
 
 
-    public void showFamiliarityWord(){
+    public void showPrimingActivity(){
         try{
 
-            FXMLLoader familiarityWordLoader = new FXMLLoader();
-            Pane familiarityWord = (Pane)familiarityWordLoader.load(getClass().getResource("../Layouts/FamiliarityActivity.fxml").openStream());
+            FXMLLoader primingActivityLoader = new FXMLLoader();
+            Pane familiarityWord = (Pane)primingActivityLoader.load(getClass().getResource("../Layouts/PrimingActivity.fxml").openStream());
 
 //            AdminController adminController = (AdminController)familiarityWordLoader.getController();
             Scene scene = new Scene(familiarityWord);

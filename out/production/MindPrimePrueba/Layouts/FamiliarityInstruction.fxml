@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FamiliarityInstructionController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="53.0" layoutY="205.0" prefHeight="98.0" prefWidth="844.0" text="Instrucciones: Escoge del 1 al 5 qué tan familiar es la palabra para ti, siendo 1 poco familiar y 5 muy familiar" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+       <Button layoutX="814.0" layoutY="564.0" onAction="#showFocusPoint" >
+
+           <graphic>
+             <ImageView fitHeight="98.0" fitWidth="77.0" layoutX="824.0" layoutY="564.0" pickOnBounds="true" preserveRatio="true">
+                 <image>
+                     <Image url="/resources/arrowLeft.png" />
+                 </image>
+             </ImageView>
+           </graphic>
+       </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PrimingWordController">
+   <children>
+      <Label fx:id="word" layoutX="369.0" layoutY="125.0" text="PALABRA">
+         <font>
+            <Font name="Century Gothic" size="64.0" />
+         </font>
+      </Label>
+      <Button layoutX="225.0" layoutY="397.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="118.0" text="PALABRA1" />
+      <Button layoutX="460.0" layoutY="397.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="118.0" text="PALABRA2" />
+      <Button layoutX="680.0" layoutY="397.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="118.0" text="PALABRA3" />
+   </children>
+</AnchorPane>

@@ -14,7 +14,8 @@ public static Connection connect(){
 String path = System.getProperty("user.dir");
 
     try{
-        String url = "jdbc:sqlite:" + path + "MindPrimeDB.db"; // SQLite url para hacer conexion
+        String url = "jdbc:sqlite:" + path + "/src/Database/MindPrimeDB.db"; // SQLite url para hacer conexion
+        System.out.println(url);
         conn = DriverManager.getConnection(url);
 
         System.out.println("Connection to SQLite has been established.");

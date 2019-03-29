@@ -69,4 +69,19 @@ if
     }
 
 
-}
+    public void addReport(){
+        String sqlInsert = "INSERT INTO ActivityPriming (answerTime, movementTime, answer, idTest, idWord) VALUES (?,?,?,?,?)";
+        try{
+            Connection connect = DatabaseConnection.connect();
+            PreparedStatement sqlStatement = connect.prepareStatement(sqlInsert);
+            sqlStatement.setString(1,this.answerTime);
+            sqlStatement.setString(2,this.movementTime);
+            sqlStatement.setString(3,this.idTest);
+            sqlStatement.setString(4,this.idWord);
+
+            sqlStatement.execute();
+            connect.close();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }

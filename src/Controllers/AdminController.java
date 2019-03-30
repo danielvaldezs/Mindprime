@@ -43,7 +43,7 @@ public class AdminController implements Initializable {
     @FXML ToggleGroup categoryUserGroup;
 
 //    private String group;
-    Connection connect;
+    Connection connect = dbConnection.getConnection();
 
     ObservableList<User> userObservableList;
     ArrayList<User> userList = new ArrayList<User>();
@@ -92,13 +92,12 @@ public class AdminController implements Initializable {
 
         try{
             if(!first_name.equals("") && !last_name.equals("") && !institution.equals("") && !birthdate.equals("") && !group.equals("")){
-                connect = dbConnection.getConnection();
 
 //                User user = new User(first_name, last_name, institution, birthdate, group);
                 if(!userExists(first_name, last_name)){
                     String sqlInsert = "INSERT INTO User (firstName, lastName, institution,userGroup,birthdate) VALUES (?,?,?,?,?)";
 
-                    PreparedStatement sqlStatement = connect.prepareStatement(sqlInsert);
+                    PreparedStatement sqlStatement = this.connect.prepareStatement(sqlInsert);
                     sqlStatement.setString(1,first_name);
                     sqlStatement.setString(2,last_name);
                     sqlStatement.setString(3,institution );
@@ -110,7 +109,7 @@ public class AdminController implements Initializable {
                     System.out.println("EL USUARIO YA EXISTE");
                 }
                 showInstruction();
-                connect.close();
+//                this.connect.close();
             }else{
                 System.out.println("Todos los campos deben llenarse");
             }
@@ -188,7 +187,7 @@ public class AdminController implements Initializable {
 //        String sqlDuplicityUser = "SELECT * from user where firstName = '" + user.getFirstName() + "'"
 //                + " and lastName = '" + user.getLastName() + "'";
         try{
-            ResultSet rs = connect.createStatement().executeQuery(sqlDuplicityUser);
+            ResultSet rs = this.connect.createStatement().executeQuery(sqlDuplicityUser);
             if(rs.next()){
                 user_exists = true;
             }
@@ -219,7 +218,6 @@ public class AdminController implements Initializable {
         }
 
         try{
-            Connection connect = dbConnection.getConnection();
 
             String sqlSelect = "select idUser, firstName, lastName, institution, userGroup, birthdate\n" +
                     "from user\n" +
@@ -231,7 +229,7 @@ public class AdminController implements Initializable {
 
 
             //PreparedStatement sqlStatement = connect.prepareStatement(sqlSelect);
-            PreparedStatement preparedStatement = connect.prepareStatement(sqlSelect);
+            PreparedStatement preparedStatement = this.connect.prepareStatement(sqlSelect);
             preparedStatement.setString(1,"%" + nameId.getText() + "%");
             preparedStatement.setString(2,"%" + lastnameId.getText() + "%");
             preparedStatement.setString(3,"%" + institutionId.getText() + "%");
@@ -249,7 +247,7 @@ public class AdminController implements Initializable {
             }
 
 
-            connect.close();
+//            this.connect.close();
 
 
         }catch (SQLException e){
@@ -313,12 +311,11 @@ public class AdminController implements Initializable {
 
     public void editUser(ActionEvent actionEvent) {
         try{
-            Connection connect = dbConnection.getConnection();
 
             String sqlSelect = "UPDATE user set firstName=?, lastName=?, institution=?, userGroup=?, birthdate=? WHERE idUser=?";
 
-            //PreparedStatement sqlStatement = connect.prepareStatement(sqlSelect);
-            PreparedStatement preparedStatement = connect.prepareStatement(sqlSelect);
+            //PreparedStatement sqlStatement = this.connect.prepareStatement(sqlSelect);
+            PreparedStatement preparedStatement = this.connect.prepareStatement(sqlSelect);
 
             preparedStatement.setString(1, nameId.getText());
             preparedStatement.setString(2, lastnameId.getText());
@@ -329,7 +326,7 @@ public class AdminController implements Initializable {
 
             preparedStatement.executeUpdate();
 
-            connect.close();
+//            this.connect.close();
 
         }catch (SQLException e){
             e.printStackTrace();
@@ -344,15 +341,14 @@ public class AdminController implements Initializable {
 
     public void deleteUser(ActionEvent actionEvent) {
         try{
-            Connection connect = dbConnection.getConnection();
             String sqlSelect = "DELETE FROM user WHERE idUser = ?";
 
-            //PreparedStatement sqlStatement = connect.prepareStatement(sqlSelect);
-            PreparedStatement preparedStatement = connect.prepareStatement(sqlSelect);
+            //PreparedStatement sqlStatement = this.connect.prepareStatement(sqlSelect);
+            PreparedStatement preparedStatement = this.connect.prepareStatement(sqlSelect);
             preparedStatement.setInt(1, selectedUserId);
             preparedStatement.executeUpdate();
 
-            connect.close();
+//            this.connect.close();
 
         }catch (SQLException e){
             e.printStackTrace();

@@ -68,7 +68,7 @@
    <RadioButton fx:id="rbCFId" layoutX="555.0" layoutY="304.0" mnemonicParsing="false" onAction="#searchUserEventA" text="CF" toggleGroup="$categoryUserGroup" />
 
 
-   <Button layoutX="72.0" layoutY="39.0" mnemonicParsing="false" onAction="#generateStatistics" prefHeight="40.0" prefWidth="152.0" text="Ver Estadísticas" />
+   <Button layoutX="72.0" layoutY="39.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="152.0" text="Ver Estadísticas" />
    <Button layoutX="72.0" layoutY="93.0" mnemonicParsing="false" onAction="#addNewWord" prefHeight="40.0" prefWidth="152.0" text="Agregar Palabra" />
 
    <ListView fx:id="listId" layoutX="47.0" layoutY="397.0" onMouseClicked="#clickUserList" prefHeight="248.0" prefWidth="606.0" />

@@ -33,16 +33,16 @@ public class LoginController implements Initializable {
 
     Connection connection;
 
-//    public LoginController(){
-//        try{
-//            this.connection = dbConnection.getConnection();
-//        }catch (SQLException ex){
-//            ex.printStackTrace();
-//        }
-//        if(this.connection == null){
-//            System.exit(1);
-//        }
-//    }
+    public LoginController(){
+        try{
+            this.connection = dbConnection.getConnection();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        if(this.connection == null){
+            System.exit(1);
+        }
+    }
 
     public boolean isDatabaseConnected(){
         return this.connection != null;

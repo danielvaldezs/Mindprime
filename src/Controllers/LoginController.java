@@ -1,4 +1,5 @@
 package Controllers;
+
 import DatabaseConnection.dbConnection;
 import LoginAdminApp.MainApp;
 import javafx.event.ActionEvent;
@@ -12,7 +13,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -33,16 +33,16 @@ public class LoginController implements Initializable {
 
     Connection connection;
 
-    public LoginController(){
-        try{
-            this.connection = dbConnection.getConnection();
-        }catch (SQLException ex){
-            ex.printStackTrace();
-        }
-        if(this.connection == null){
-            System.exit(1);
-        }
-    }
+//    public LoginController(){
+//        try{
+//            this.connection = dbConnection.getConnection();
+//        }catch (SQLException ex){
+//            ex.printStackTrace();
+//        }
+//        if(this.connection == null){
+//            System.exit(1);
+//        }
+//    }
 
     public boolean isDatabaseConnected(){
         return this.connection != null;
@@ -54,6 +54,7 @@ public class LoginController implements Initializable {
         ResultSet resultSet = null;
 
         String sqlSelect = "SELECT * FROM ADMIN where adminName = ? and password =?"; //firstName and password are the name of the attributes in sqlite
+        
         try{
             preparedStatement = this.connection.prepareStatement(sqlSelect);
             preparedStatement.setString(1,adminame);

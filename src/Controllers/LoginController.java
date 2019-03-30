@@ -1,7 +1,6 @@
 package Controllers;
 
 import DatabaseConnection.dbConnection;
-import LoginAdminApp.MainApp;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,22 +30,23 @@ public class LoginController implements Initializable {
     @FXML private Button signInButtonId;
     @FXML private Label loginStatusId;
 
-    Connection connection;
+    Connection connection = dbConnection.getConnection();
 
-    public LoginController(){
-        try{
-            this.connection = dbConnection.getConnection();
-        }catch (Exception ex){
-            ex.printStackTrace();
-        }
-        if(this.connection == null){
-            System.exit(1);
-        }
-    }
-
-    public boolean isDatabaseConnected(){
-        return this.connection != null;
-    }
+    // Useless stuff
+//    public LoginController(){
+//        try{
+//            this.connection = dbConnection.getConnection();
+//        }catch (Exception ex){
+//            ex.printStackTrace();
+//        }
+//        if(this.connection == null){
+//            System.exit(1);
+//        }
+//    }
+//
+//    public boolean isDatabaseConnected(){
+//        return this.connection != null;
+//    }
 
     public boolean isLogin(String adminame, String pass) throws Exception{
 

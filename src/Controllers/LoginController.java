@@ -31,7 +31,10 @@ public class LoginController implements Initializable {
     @FXML private Label loginStatusId;
 
     Connection connection = dbConnection.getConnection();
-
+    
+    public LoginController() throws SQLException {
+    	
+    }
     // Useless stuff
 //    public LoginController(){
 //        try{

@@ -13,20 +13,20 @@
     <children>
 
         <FlowPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-        <Button mnemonicParsing="false" onAction="#botonCuatro" text="4" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-        <Button mnemonicParsing="false" onAction="#botonCinco" text="5" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-        <Button mnemonicParsing="false" onAction="#botonDos" text="2" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-        <Button mnemonicParsing="false" onAction="#botonTres" text="3" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <Button fx:id="button1" mnemonicParsing="false" onAction="#ActionPerformed" text="1" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <Button fx:id="button2" mnemonicParsing="false" onAction="#ActionPerformed" text="2" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Button fx:id="button3" mnemonicParsing="false" onAction="#ActionPerformed" text="3" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <Button fx:id="button4" mnemonicParsing="false" onAction="#ActionPerformed" text="4" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+        <Button fx:id="button5" mnemonicParsing="false" onAction="#ActionPerformed" text="5" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+
+
         <Region prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
      <Text fx:id="algo" strokeType="OUTSIDE" strokeWidth="0" text="text" GridPane.columnIndex="2">
          <font>
              <Font size="48"/>
          </font>
      </Text>
-        <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" rowValignment="BOTTOM" GridPane.rowIndex="1">
-         <children>
-              <Button mnemonicParsing="false" onAction="#botonUno" text="1" />
-         </children></FlowPane>
+
     </children>
     <columnConstraints>
         <ColumnConstraints maxWidth="153.0" minWidth="72.0" prefWidth="130.0" />

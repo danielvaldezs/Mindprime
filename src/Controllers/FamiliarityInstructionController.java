@@ -25,7 +25,6 @@ public class FamiliarityInstructionController {
     Stage familiarityInstructionStage = new Stage();
     FocusPointController focusPoint = new FocusPointController();
     FamiliarityWordController familiarityWord = new FamiliarityWordController();
-    PrimingWordController primingWordController = new PrimingWordController();
 
     public FamiliarityInstructionController() throws SQLException {
     }

@@ -13,10 +13,16 @@
                 <Font size="28.0" />
             </font>
         </Label>
-        <ImageView fitHeight="75.0" fitWidth="81.0" layoutX="821.0" layoutY="602.0" >
-            <image>
-                <Image url="/resources/arrowLeft.png" />
-            </image>
-        </ImageView>
+        <Button layoutX="814.0" layoutY="564.0" onAction="#StartFocusPoint">
+
+            <graphic>
+                <ImageView fitHeight="98.0" fitWidth="77.0" layoutX="824.0" layoutY="564.0" pickOnBounds="true"   preserveRatio="true">
+                    <image >
+                        <Image url="Resources/arrowLeft.png" />
+
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
     </children>
 </AnchorPane>

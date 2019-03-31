@@ -27,7 +27,7 @@ public class FamiliarityWordController implements Initializable {
     public Text texto;
     public Text algo;
     public Button button1, button2, button3, button4, button5;
-    PrimingInstructionController primingInstructionController;
+    PrimingInstructionController primingInstructionController = new PrimingInstructionController();
 
 
     Connection connect = dbConnection.getConnection();
@@ -102,7 +102,6 @@ public class FamiliarityWordController implements Initializable {
             insertFamiliarityValue(wordList.get(i).getIdWord(), wordList.get(i).getWord(), num);
             i = i + 1;
         }else {
-            primingInstructionController = new PrimingInstructionController();
             primingInstructionController.showPrimingInstruction();
         }
     }
@@ -127,7 +126,7 @@ public class FamiliarityWordController implements Initializable {
     public void showFamiliarityWord(){
         try{
             FXMLLoader familiarityWordLoader = new FXMLLoader();
-            Pane familiarityWord = (Pane)familiarityWordLoader.load(getClass().getResource("/Layouts/FamiliarityWord.fxml").openStream());
+            Pane familiarityWord = (Pane)familiarityWordLoader.load(getClass().getResource("../Layouts/FamiliarityWord.fxml").openStream());
 
             Scene scene = new Scene(familiarityWord);
             this.familiarityWordStage.setScene(scene);

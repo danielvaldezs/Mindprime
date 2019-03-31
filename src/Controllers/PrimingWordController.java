@@ -156,20 +156,26 @@ public class PrimingWordController implements Initializable {
 		// TODO Auto-generated method stub
 		String[] palabras;
 		
-		palabras = this.selectWords(dbConnection.getConnection());
-		
-		
-		System.out.println("Palabras obtenidas de la base de datos: ");
-		for (int i = 0; i < palabras.length; i++) {
-			System.out.println(palabras[i]);
+		try {
+			palabras = this.selectWords(dbConnection.getConnection());
+			System.out.println("Palabras obtenidas de la base de datos: ");
+			for (int i = 0; i < palabras.length; i++) {
+				System.out.println(palabras[i]);
+			}
+			
+			String palabraAleatoria = this.getRandomWord(palabras); // Obtener palabra aleatoria
+			System.out.println("Palabra aleatoria: " + palabraAleatoria); // Imprimir palabra aleatoria
+			String word = this.manipulateWord(palabraAleatoria); // Imprimir palabra con letras ocultas
+			
+			System.out.println("Palabra escondida: " + word);
+			
+			hideLetterWord.setText(word);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
-		String palabraAleatoria = this.getRandomWord(palabras); // Obtener palabra aleatoria
-		System.out.println("Palabra aleatoria: " + palabraAleatoria); // Imprimir palabra aleatoria
-		String word = this.manipulateWord(palabraAleatoria); // Imprimir palabra con letras ocultas
 		
-		System.out.println("Palabra escondida: " + word);
 		
-		hideLetterWord.setText(word);
 	}
 }

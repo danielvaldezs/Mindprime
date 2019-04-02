@@ -27,7 +27,7 @@ public class FamiliarityWordController implements Initializable {
     public Text texto;
     public Text algo;
     public Button button1, button2, button3, button4, button5;
-    PrimingInstructionController primingInstructionController = new PrimingInstructionController();
+    PrimingInstructionController primingInstructionController;
 
     Connection connect = dbConnection.getConnection();
     Stage familiarityWordStage = new Stage();
@@ -103,6 +103,12 @@ public class FamiliarityWordController implements Initializable {
             insertFamiliarityValue(wordList.get(i).getIdWord(), wordList.get(i).getWord(), num);
             i = i + 1;
         }else {
+        		try {
+					primingInstructionController = new PrimingInstructionController();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 	            primingInstructionController.showPrimingInstruction();
         }
     }

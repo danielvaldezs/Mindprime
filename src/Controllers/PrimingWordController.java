@@ -21,6 +21,11 @@ public class PrimingWordController implements Initializable {
 
     Stage primingWordStage = new Stage();
     public Label hideLetterWord;
+    Connection connect = dbConnection.getConnection();
+    
+    public PrimingWordController() throws SQLException {
+    }
+
 
     public void showPrimingWord(){
     	
@@ -156,23 +161,30 @@ public class PrimingWordController implements Initializable {
 		// TODO Auto-generated method stub
 		String[] palabras;
 		
-		try {
-			palabras = this.selectWords(dbConnection.getConnection());
-			System.out.println("Palabras obtenidas de la base de datos: ");
-			for (int i = 0; i < palabras.length; i++) {
-				System.out.println(palabras[i]);
-			}
-			
-			String palabraAleatoria = this.getRandomWord(palabras); // Obtener palabra aleatoria
-			System.out.println("Palabra aleatoria: " + palabraAleatoria); // Imprimir palabra aleatoria
-			String word = this.manipulateWord(palabraAleatoria); // Imprimir palabra con letras ocultas
-			
-			System.out.println("Palabra escondida: " + word);
-			
-			hideLetterWord.setText(word);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+//		try {
+//			palabras = this.selectWords(dbConnection.getConnection());
+//			System.out.println("Palabras obtenidas de la base de datos: ");
+//			for (int i = 0; i < palabras.length; i++) {
+//				System.out.println(palabras[i]);
+//			}
+//			
+//			String palabraAleatoria = this.getRandomWord(palabras); // Obtener palabra aleatoria
+//			System.out.println("Palabra aleatoria: " + palabraAleatoria); // Imprimir palabra aleatoria
+//			String word = this.manipulateWord(palabraAleatoria); // Imprimir palabra con letras ocultas
+//			
+//			System.out.println("Palabra escondida: " + word);
+//			
+//			hideLetterWord.setText(word);
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+
+		palabras = this.selectWords(this.connect);
+		
+		
+		System.out.println("Palabras obtenidas de la base de datos: ");
+		for (int i = 0; i < palabras.length; i++) {
+			System.out.println(palabras[i]);
 		}
 		
 		

@@ -247,7 +247,7 @@ public class AdminController implements Initializable {
             }
 
 
-//            this.connect.close();
+            this.connect.close();
 
 
         }catch (SQLException e){
@@ -326,7 +326,7 @@ public class AdminController implements Initializable {
 
             preparedStatement.executeUpdate();
 
-//            this.connect.close();
+            this.connect.close();
 
         }catch (SQLException e){
             e.printStackTrace();
@@ -348,7 +348,7 @@ public class AdminController implements Initializable {
             preparedStatement.setInt(1, selectedUserId);
             preparedStatement.executeUpdate();
 
-//            this.connect.close();
+            this.connect.close();
 
         }catch (SQLException e){
             e.printStackTrace();

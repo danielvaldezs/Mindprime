@@ -30,30 +30,29 @@ public class LoginController implements Initializable {
     @FXML private Button signInButtonId;
     @FXML private Label loginStatusId;
 
-    Connection connection = dbConnection.getConnection();
+    Connection connection;
 
-    // Useless stuff
-//    public LoginController(){
-//        try{
-//            this.connection = dbConnection.getConnection();
-//        }catch (Exception ex){
-//            ex.printStackTrace();
-//        }
-//        if(this.connection == null){
-//            System.exit(1);
-//        }
-//    }
-//
-//    public boolean isDatabaseConnected(){
-//        return this.connection != null;
-//    }
+    public LoginController(){
+        try{
+            this.connection = dbConnection.getConnection();
+        }catch (SQLException ex){
+            ex.printStackTrace();
+        }
+        if (this.connection == null){
+            System.exit(1);
+        }
+    }
+
+    public boolean isDatabaseConnected(){
+        return this.connection != null;
+    }
 
     public boolean isLogin(String adminame, String pass) throws Exception{
 
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
 
-        String sqlSelect = "SELECT * FROM ADMIN where adminName = ? and password =?"; //firstName and password are the name of the attributes in sqlite
+        String sqlSelect = "SELECT * FROM ADMIN where adminName = ? and password = ?"; //firstName and password are the name of the attributes in sqlite
         
         try{
             preparedStatement = this.connection.prepareStatement(sqlSelect);

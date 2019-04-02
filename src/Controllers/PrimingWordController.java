@@ -21,6 +21,11 @@ public class PrimingWordController implements Initializable {
 
     Stage primingWordStage = new Stage();
     public Label hideLetterWord;
+    Connection connect = dbConnection.getConnection();
+    
+    public PrimingWordController() throws SQLException {
+    }
+
 
     public void showPrimingWord(){
     	
@@ -156,7 +161,7 @@ public class PrimingWordController implements Initializable {
 		// TODO Auto-generated method stub
 		String[] palabras;
 		
-		palabras = this.selectWords(dbConnection.getConnection());
+		palabras = this.selectWords(this.connect);
 		
 		
 		System.out.println("Palabras obtenidas de la base de datos: ");

@@ -17,7 +17,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class FamiliarityInstructionController implements Initializable {
+public class FamiliarityInstructionController {
 
 
     public Button imageButton;
@@ -59,9 +59,9 @@ public class FamiliarityInstructionController implements Initializable {
         stage.close();
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
-    }
+//    @Override
+//    public void initialize(URL location, ResourceBundle resources) {
+//
+//    }
 
 }

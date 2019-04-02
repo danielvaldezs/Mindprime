@@ -34,7 +34,7 @@ public class FamiliarityWordController implements Initializable {
     int idf, num;
     int i=0;
 
-    ArrayList<Word> wordList = new ArrayList<Word>();
+    private ArrayList<Word> wordList = new ArrayList<Word>();
 
     public FamiliarityWordController() throws SQLException {
     }
@@ -106,7 +106,6 @@ public class FamiliarityWordController implements Initializable {
         		try {
 					primingInstructionController = new PrimingInstructionController();
 				} catch (SQLException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 	            primingInstructionController.showPrimingInstruction();
@@ -131,7 +130,6 @@ public class FamiliarityWordController implements Initializable {
         	try {
 				connect.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
         }
@@ -152,7 +150,11 @@ public class FamiliarityWordController implements Initializable {
         }
     }
 
-    public void closeFamiliarityWord(){
+    public ArrayList<Word> getWordList() {
+		return wordList;
+	}
+
+	public void closeFamiliarityWord(){
         this.familiarityWordStage.close();
     }
 

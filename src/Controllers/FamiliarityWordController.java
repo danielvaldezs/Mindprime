@@ -30,15 +30,12 @@ public class FamiliarityWordController implements Initializable {
     PrimingInstructionController primingInstructionController;
 
 
-    Connection connect = dbConnection.getConnection();
+    Connection connect;
     Stage familiarityWordStage = new Stage();
-    int idf, num;
-    int i=0;
+    int num, i=0, totalWords=30;
+
 
     ArrayList<Word> wordList = new ArrayList<Word>();
-
-    public FamiliarityWordController() throws SQLException {
-    }
 
     //Uso de metodo initialize para que en cuanto se cargue la vista, se ejecute metodo getWords y poner la primera
     //palabra del arraylist en el label que corresponde
@@ -46,17 +43,17 @@ public class FamiliarityWordController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         try {
             getWords();
+            displayWord();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        algo.setText(wordList.get(i).getWord());
     }
 
     //Obtener palabras de la base de datos y guardarlas en el arraylist wordList de tipo word
     public void getWords() throws SQLException {
         connect = dbConnection.getConnection();
 
-        String sqlSelectWord = "select * from word";
+        String sqlSelectWord = "select * from word order by random() limit 30;";
         PreparedStatement preparedStatement = connect.prepareStatement(sqlSelectWord);
         ResultSet rs = preparedStatement.executeQuery();
 
@@ -82,14 +79,11 @@ public class FamiliarityWordController implements Initializable {
             num = 1;
         } else if (actionEvent.getSource().equals(button2)) {
             num = 2;
-        }
-        else if (actionEvent.getSource().equals(button3)) {
+        } else if (actionEvent.getSource().equals(button3)) {
             num = 3;
-        }
-        else if (actionEvent.getSource().equals(button4)) {
+        } else if (actionEvent.getSource().equals(button4)) {
             num = 4;
-        }
-        else if (actionEvent.getSource().equals(button5)) {
+        } else if (actionEvent.getSource().equals(button5)) {
             num = 5;
         }
         displayWord();
@@ -97,12 +91,13 @@ public class FamiliarityWordController implements Initializable {
 
     // Actualiza la palabra que se muestran en el label
     public void displayWord(){
-        if(i < 10) {
+        if(i < totalWords) {
             algo.setText(wordList.get(i).getWord());
             insertFamiliarityValue(wordList.get(i).getIdWord(), wordList.get(i).getWord(), num);
             i = i + 1;
         }else {
             primingInstructionController = new PrimingInstructionController();
+            Stage stage = (Stage)button1.getScene().getWindow();
             primingInstructionController.showPrimingInstruction();
         }
     }

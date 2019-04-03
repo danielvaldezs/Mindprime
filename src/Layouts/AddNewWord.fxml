@@ -66,7 +66,7 @@
          <font>
             <Font size="17.0" />
          </font></RadioButton>
-      <Button layoutX="387.0" layoutY="523.0" mnemonicParsing="false" onAction="#addNewWord" prefHeight="65.0" prefWidth="211.0" text="AGREGAR PALABRA">
+      <Button fx:id="saveWordButton" layoutX="387.0" layoutY="523.0" mnemonicParsing="false" onAction="#addNewWord" prefHeight="65.0" prefWidth="211.0" text="AGREGAR PALABRA">
          <font>
             <Font size="20.0" />
          </font></Button>

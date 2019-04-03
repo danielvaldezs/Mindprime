@@ -7,9 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -24,6 +22,7 @@ import java.util.ResourceBundle;
 
 public class AddNewWordController implements Initializable{
 
+    public Button saveWordButton;
     @FXML private TextField txtWord;
     @FXML private TextField txtQuantitySyllables;
     @FXML private ToggleGroup mainWordGroup;
@@ -72,38 +71,78 @@ public class AddNewWordController implements Initializable{
 
     public void addNewWord(ActionEvent actionEvent) {
         String string_word = txtWord.getText();
-        String category = getCategorySelected();
-        int quantitySyllables = Integer.parseInt(txtQuantitySyllables.getText());
-        char initialLetter = getWordFirstLetter();
-        boolean isMainWord = isMainWord();
 
         if(!txtWord.getText().equals("") && !txtQuantitySyllables.getText().equals("")
                 && mainWordGroup.getSelectedToggle().isSelected() && categoryGroup.getSelectedToggle().isSelected()) {
+
             try {
                 connect = dbConnection.getConnection();
-//                Word word = new Word(string_word, category, quantitySyllables, initialLetter, isMainWord);
-
                 if (!wordExists(string_word)) {
-                    String sqlInsert = "INSERT INTO word (word, category, quantitySyllables,initialLetter,mainWord) VALUES (?,?,?,?,?)";
+                    if(selectBeforeAddWord().showAndWait().get() == ButtonType.OK) {
+                        String sqlInsert = "INSERT INTO word (word, category, quantitySyllables,initialLetter,mainWord) VALUES (?,?,?,?,?)";
 
-                    PreparedStatement sqlStatement = connect.prepareStatement(sqlInsert);
+                        PreparedStatement sqlStatement = connect.prepareStatement(sqlInsert);
 
-                    sqlStatement.setString(1, this.txtWord.getText());
-                    sqlStatement.setString(2, getCategorySelected());
-                    sqlStatement.setInt(3, Integer.parseInt(txtQuantitySyllables.getText()));
-                    sqlStatement.setString(4, String.valueOf(getWordFirstLetter()));
-                    sqlStatement.setBoolean(5, isMainWord());
+                        sqlStatement.setString(1, this.txtWord.getText());
+                        sqlStatement.setString(2, getCategorySelected());
+                        sqlStatement.setInt(3, Integer.parseInt(txtQuantitySyllables.getText()));
+                        sqlStatement.setString(4, String.valueOf(getWordFirstLetter()));
+                        sqlStatement.setBoolean(5, isMainWord());
 
-                    sqlStatement.executeUpdate();
+                        sqlStatement.executeUpdate();
+
+                        Stage stage = (Stage) this.saveWordButton.getScene().getWindow();
+                        showAlertWordAdded();
+                        stage.close();
+                    }
                 } else {
-                    System.out.println("La palabra ya existe");
+                    showAlertWordExists();
                 }
                 connect.close();
-
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+        }else {
+            showAlertFieldEmpty();
         }
+    }
+
+    private void showAlertWordExists() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Palabra Existente");
+        alert.setContentText("La palabra que desea agregar, ya existe");
+        alert.setHeaderText(null);
+        alert.showAndWait();
+    }
+
+    private Alert selectBeforeAddWord() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Palabra Agregada");
+        alert.setContentText("Seguro que desea agregar la palabra?");
+        alert.setHeaderText(null);
+        return alert;
+//        if(alert.showAndWait().get() == ButtonType.OK){
+//            addNewWord();
+//            Stage stage = (Stage)this.saveWordButton.getScene().getWindow();
+//            stage.close();
+//        }
+    }
+
+
+    private void showAlertWordAdded() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Palabra Agregada");
+        alert.setContentText("La palabra ha sido agregada exitosamente");
+        alert.setHeaderText(null);
+        alert.showAndWait();
+    }
+
+    private void showAlertFieldEmpty() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Campos Vacios");
+        alert.setContentText("Debe llenar todos los campos");
+        alert.setHeaderText(null);
+        alert.showAndWait();
     }
 
     //Metodo para validar si la palabra ya existe en la base de datos

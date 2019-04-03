@@ -5,15 +5,30 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PrimingWordController">
-   <children>
-      <Label fx:id="word" layoutX="369.0" layoutY="125.0" text="PALABRA">
-         <font>
-            <Font name="Century Gothic" size="64.0" />
-         </font>
-      </Label>
-      <Button layoutX="225.0" layoutY="397.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="118.0" text="PALABRA1" />
-      <Button layoutX="460.0" layoutY="397.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="118.0" text="PALABRA2" />
-      <Button layoutX="680.0" layoutY="397.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="118.0" text="PALABRA3" />
-   </children>
+<AnchorPane prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PrimingWordController">
+            
+            <Label fx:id="hideLetterWord" alignment="CENTER" layoutX="106.0" layoutY="61.0" prefHeight="70.0" prefWidth="738.0">
+		        <font>
+		            <Font size="48.0" />
+		        </font>
+		    </Label>
+		    
+		    <Button fx:id="option1" layoutX="162.0" layoutY="400.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="151.0">
+		      <font>
+		         <Font size="20.0" />
+		      </font>
+		   </Button>
+		   
+		    <Button fx:id="option2" layoutX="399.0" layoutY="400.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="151.0">
+		      <font>
+		         <Font size="20.0" />
+		      </font>
+		   </Button>
+		   
+		    <Button fx:id="option3" layoutX="635.0" layoutY="400.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="151.0">
+		      <font>
+		         <Font size="20.0" />
+		      </font>
+		   </Button>
+
 </AnchorPane>

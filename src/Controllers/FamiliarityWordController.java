@@ -30,10 +30,11 @@ public class FamiliarityWordController implements Initializable {
     PrimingInstructionController primingInstructionController;
 
 
+
     Connection connect;
+
     Stage familiarityWordStage = new Stage();
     int num, i=0, totalWords=30;
-
 
     ArrayList<Word> wordList = new ArrayList<Word>();
 
@@ -44,6 +45,7 @@ public class FamiliarityWordController implements Initializable {
         try {
             getWords();
             displayWord();
+            connect.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -74,7 +76,7 @@ public class FamiliarityWordController implements Initializable {
 
     //Metodo para detectar el boton que ha sido seleccionado y asignar el valor de familiaridad que tenga el usuario
     @FXML
-    public void ActionPerformed(ActionEvent actionEvent) {
+    public void ActionPerformed(ActionEvent actionEvent) throws SQLException {
         if (actionEvent.getSource().equals(button1)) {
             num = 1;
         } else if (actionEvent.getSource().equals(button2)) {
@@ -90,7 +92,7 @@ public class FamiliarityWordController implements Initializable {
     }
 
     // Actualiza la palabra que se muestran en el label
-    public void displayWord(){
+    public void displayWord() throws SQLException {
         if(i < totalWords) {
             algo.setText(wordList.get(i).getWord());
             insertFamiliarityValue(wordList.get(i).getIdWord(), wordList.get(i).getWord(), num);
@@ -99,6 +101,12 @@ public class FamiliarityWordController implements Initializable {
             primingInstructionController = new PrimingInstructionController();
             Stage stage = (Stage)button1.getScene().getWindow();
             primingInstructionController.showPrimingInstruction();
+        		try {
+					primingInstructionController = new PrimingInstructionController();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+	            primingInstructionController.showPrimingInstruction();
         }
     }
 
@@ -116,13 +124,19 @@ public class FamiliarityWordController implements Initializable {
             connect.close();
         }catch (SQLException e){
             e.printStackTrace();
+        } finally {
+        	try {
+				connect.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
         }
     }
 
     public void showFamiliarityWord(){
         try{
             FXMLLoader familiarityWordLoader = new FXMLLoader();
-            Pane familiarityWord = (Pane)familiarityWordLoader.load(getClass().getResource("/Layouts/FamiliarityWord.fxml").openStream());
+            Pane familiarityWord = (Pane)familiarityWordLoader.load(getClass().getResource("../Layouts/FamiliarityWord.fxml").openStream());
 
             Scene scene = new Scene(familiarityWord);
             this.familiarityWordStage.setScene(scene);
@@ -134,7 +148,11 @@ public class FamiliarityWordController implements Initializable {
         }
     }
 
-    public void closeFamiliarityWord(){
+    public ArrayList<Word> getWordList() {
+		return wordList;
+	}
+
+	public void closeFamiliarityWord(){
         this.familiarityWordStage.close();
     }
 

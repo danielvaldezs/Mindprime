@@ -14,13 +14,13 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-//        Parent root = (Parent) FXMLLoader.load(getClass().getResource("../Layouts/Login.fxml"));
+        Parent root = (Parent) FXMLLoader.load(getClass().getResource("../Layouts/Login.fxml"));
 //
 //        Scene scene = new Scene(root);
 //        primaryStage.setScene(scene);
 //        primaryStage.setTitle("MindPrime Login");
 //        primaryStage.show();
-        Parent root = (Parent) FXMLLoader.load(getClass().getResource("../Layouts/Admin.fxml"));
+//        Parent root = (Parent) FXMLLoader.load(getClass().getResource("../Layouts/Admin.fxml"));
 //        Parent root = (Parent) FXMLLoader.load(getClass().getResource("../Layouts/PrimingWord.fxml"));
 //        Parent root = (Parent) FXMLLoader.load(getClass().getResource("../Layouts/FamiliarityWord.fxml"));
 

@@ -54,7 +54,7 @@ public class FocusPointController implements Initializable {
 
     public void setTimer2() throws InterruptedException {
         Thread.sleep(3000);
-        familiarityWord.showFamiliarityWord();
+        primingWord.showPrimingWord();
         focusPointStage.close();
     }
 

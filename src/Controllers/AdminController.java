@@ -11,9 +11,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+//import org.apache.poi.hssf.usermodel.HSSFRow;
+//import org.apache.poi.hssf.usermodel.HSSFSheet;
+//import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -48,6 +48,8 @@ public class AdminController implements Initializable {
     ObservableList<User> userObservableList;
     ArrayList<User> userList = new ArrayList<User>();
     int selectedUserId = 100000;
+    int currentUserId=0;
+
 
     FamiliarityInstructionController familiarityInstruction = new FamiliarityInstructionController();
     FamiliarityWordController familiarityWord;
@@ -109,6 +111,7 @@ public class AdminController implements Initializable {
                 }else{
                     System.out.println("EL USUARIO YA EXISTE");
                 }
+                createTest();
                 showInstruction();
                 connect.close();
             }else{
@@ -117,6 +120,48 @@ public class AdminController implements Initializable {
         }catch (SQLException e){
             e.printStackTrace();
 
+        }
+    }
+    public void createTest(){
+//        int currentUserId=0;
+
+        String sqlSelectId = "select idUser from user where (firstName = ?) and (lastName = ?) and (institution = ?)";
+        String sqlInsertTest = "Insert into test(correctAnswers,dateDone, idUser) values (0,date('now'), ?)";
+
+//        String sqlInsertTest = "Insert into test(correctAnswers,dateDone, idUser) values (0,date('now'), ?)";
+
+        try{
+            PreparedStatement preparedStatement = connect.prepareStatement(sqlSelectId);
+            preparedStatement.setString(1, nameId.getText());
+            preparedStatement.setString(2, lastnameId.getText());
+            preparedStatement.setString(3, institutionId.getText());
+
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while(rs.next()){
+                currentUserId = rs.getInt("idUser");
+            }
+
+//            PreparedStatement prepareStatement = connect.prepareStatement(sqlInsertTest);
+//            prepareStatement.setInt(1, currentUserId);
+//
+//            prepareStatement.executeQuery(sqlInsertTest);
+
+//            connect.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+
+        try{
+            PreparedStatement prepareStatement = connect.prepareStatement(sqlInsertTest);
+            prepareStatement.setInt(1, currentUserId);
+
+//            prepareStatement.executeQuery(sqlInsertTest);
+
+//            connect.close();
+
+        }catch(SQLException e){
+            e.printStackTrace();
         }
     }
 
@@ -144,41 +189,41 @@ public class AdminController implements Initializable {
         searchUser();
     }
 
-    public void generateStatistics(ActionEvent actionEvent) {
-        String sqlQuery = "select * from word";
-        try{
-            Connection connect = dbConnection.getConnection();
-            PreparedStatement ps = connect.prepareStatement(sqlQuery);
-            ResultSet rs = ps.executeQuery();
-
-            HSSFWorkbook workbook = new HSSFWorkbook();
-            HSSFSheet sheet = workbook.createSheet("Palabras");
-            HSSFRow rowhead = sheet.createRow((short) 0);
-            rowhead.createCell((short) 0).setCellValue("idWord");
-            rowhead.createCell((short) 1).setCellValue("word");
-            rowhead.createCell((short) 2).setCellValue("category");
-            rowhead.createCell((short) 3).setCellValue("quantitySyllables");
-            int i = 1;
-            while (rs.next()){
-                HSSFRow row = sheet.createRow((short) i);
-                row.createCell((short) 0).setCellValue(Integer.toString(rs.getInt("idWord")));
-                row.createCell((short) 1).setCellValue(rs.getString("word"));
-                row.createCell((short) 2).setCellValue(rs.getString("category"));
-                row.createCell((short) 3).setCellValue(rs.getInt("quantitySyllables"));
-                i++;
-            }
-            String urlFile = "D:\\prueba\\test.xls";
-            FileOutputStream fileOut = new FileOutputStream(urlFile);
-            workbook.write(fileOut);
-            fileOut.close();
-        } catch (SQLException e1) {
-            e1.printStackTrace();
-        } catch (FileNotFoundException e1) {
-            e1.printStackTrace();
-        } catch (IOException e1) {
-            e1.printStackTrace();
-        }
-    }
+//    public void generateStatistics(ActionEvent actionEvent) {
+//        String sqlQuery = "select * from word";
+//        try{
+//            Connection connect = dbConnection.getConnection();
+//            PreparedStatement ps = connect.prepareStatement(sqlQuery);
+//            ResultSet rs = ps.executeQuery();
+//
+//            HSSFWorkbook workbook = new HSSFWorkbook();
+//            HSSFSheet sheet = workbook.createSheet("Palabras");
+//            HSSFRow rowhead = sheet.createRow((short) 0);
+//            rowhead.createCell((short) 0).setCellValue("idWord");
+//            rowhead.createCell((short) 1).setCellValue("word");
+//            rowhead.createCell((short) 2).setCellValue("category");
+//            rowhead.createCell((short) 3).setCellValue("quantitySyllables");
+//            int i = 1;
+//            while (rs.next()){
+//                HSSFRow row = sheet.createRow((short) i);
+//                row.createCell((short) 0).setCellValue(Integer.toString(rs.getInt("idWord")));
+//                row.createCell((short) 1).setCellValue(rs.getString("word"));
+//                row.createCell((short) 2).setCellValue(rs.getString("category"));
+//                row.createCell((short) 3).setCellValue(rs.getInt("quantitySyllables"));
+//                i++;
+//            }
+//            String urlFile = "D:\\prueba\\test.xls";
+//            FileOutputStream fileOut = new FileOutputStream(urlFile);
+//            workbook.write(fileOut);
+//            fileOut.close();
+//        } catch (SQLException e1) {
+//            e1.printStackTrace();
+//        } catch (FileNotFoundException e1) {
+//            e1.printStackTrace();
+//        } catch (IOException e1) {
+//            e1.printStackTrace();
+//        }
+//    }
 
     //Metodo para verificar si ya existe un usuario en la base de datos
     public boolean userExists(String first_name, String last_name){
@@ -219,6 +264,7 @@ public class AdminController implements Initializable {
         }
 
         try{
+        	
             Connection connect = dbConnection.getConnection();
 
             String sqlSelect = "select idUser, firstName, lastName, institution, userGroup, birthdate\n" +
@@ -248,9 +294,7 @@ public class AdminController implements Initializable {
                         rs.getString("birthdate")));
             }
 
-
             connect.close();
-
 
         }catch (SQLException e){
             e.printStackTrace();
@@ -317,7 +361,7 @@ public class AdminController implements Initializable {
 
             String sqlSelect = "UPDATE user set firstName=?, lastName=?, institution=?, userGroup=?, birthdate=? WHERE idUser=?";
 
-            //PreparedStatement sqlStatement = connect.prepareStatement(sqlSelect);
+            //PreparedStatement sqlStatement = this.connect.prepareStatement(sqlSelect);
             PreparedStatement preparedStatement = connect.prepareStatement(sqlSelect);
 
             preparedStatement.setString(1, nameId.getText());
@@ -347,12 +391,12 @@ public class AdminController implements Initializable {
             Connection connect = dbConnection.getConnection();
             String sqlSelect = "DELETE FROM user WHERE idUser = ?";
 
-            //PreparedStatement sqlStatement = connect.prepareStatement(sqlSelect);
+            //PreparedStatement sqlStatement = this.connect.prepareStatement(sqlSelect);
             PreparedStatement preparedStatement = connect.prepareStatement(sqlSelect);
             preparedStatement.setInt(1, selectedUserId);
             preparedStatement.executeUpdate();
 
-            connect.close();
+          connect.close();
 
         }catch (SQLException e){
             e.printStackTrace();

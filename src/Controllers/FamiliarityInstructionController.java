@@ -17,7 +17,8 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class FamiliarityInstructionController {
+public class FamiliarityInstructionController
+{
 
 
     public Button imageButton;
@@ -25,14 +26,16 @@ public class FamiliarityInstructionController {
     Stage familiarityInstructionStage = new Stage();
     FocusPointController focusPoint = new FocusPointController();
     FamiliarityWordController familiarityWord = new FamiliarityWordController();
-    PrimingWordController primingWordController = new PrimingWordController();
 
-    public FamiliarityInstructionController() throws SQLException {
+    public FamiliarityInstructionController()
+    {
     }
 
 
-    public void showFamiliarityInstruction() {
-        try {
+    public void showFamiliarityInstruction()
+    {
+        try
+        {
 
             FXMLLoader familiarityInstructionLoader = new FXMLLoader();
             Pane familiarityInstructionRoot = (Pane) familiarityInstructionLoader.load(getClass().getResource("/Layouts/FamiliarityInstruction.fxml").openStream());
@@ -45,12 +48,15 @@ public class FamiliarityInstructionController {
             this.familiarityInstructionStage.setResizable(false);
             this.familiarityInstructionStage.show();
 
-        } catch (IOException ex) {
+        }
+        catch (IOException ex)
+        {
             ex.printStackTrace();
         }
     }
 
-    public void showFocusPoint(ActionEvent actionEvent) throws InterruptedException {
+    public void showFocusPoint(ActionEvent actionEvent)
+    {
         focusPoint.showFocusPoint();
         focusPoint.setTimer();
 //        focusPoint.close();
@@ -58,10 +64,5 @@ public class FamiliarityInstructionController {
         Stage stage = (Stage)this.imageButton.getScene().getWindow();
         stage.close();
     }
-
-//    @Override
-//    public void initialize(URL location, ResourceBundle resources) {
-//
-//    }
 
 }

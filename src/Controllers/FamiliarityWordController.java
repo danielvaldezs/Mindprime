@@ -27,13 +27,15 @@ public class FamiliarityWordController implements Initializable {
     public Text texto;
     public Text algo;
     public Button button1, button2, button3, button4, button5;
-    PrimingInstructionController primingInstructionController;
+    public PrimingInstructionController primingInstructionController;
+
 
 
     Connection connect;
-    Stage familiarityWordStage = new Stage();
-    int num, i=0, totalWords=30;
 
+    Stage familiarityWordStage = new Stage();
+    int num, i=0, totalWords=10;
+    int lastTest;
 
     ArrayList<Word> wordList = new ArrayList<Word>();
 
@@ -41,26 +43,39 @@ public class FamiliarityWordController implements Initializable {
     //palabra del arraylist en el label que corresponde
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        try {
+        try
+        {
             getWords();
             displayWord();
-        } catch (SQLException e) {
+//            lastTest();
+            connect.close();
+        }
+        catch (SQLException e)
+        {
             e.printStackTrace();
         }
     }
 
     //Obtener palabras de la base de datos y guardarlas en el arraylist wordList de tipo word
-    public void getWords() throws SQLException {
+    public void getWords()
+    {
         connect = dbConnection.getConnection();
+        try
+        {
+            String sqlSelectWord = "select * from word order by random() limit 30;";
+            PreparedStatement preparedStatement = connect.prepareStatement(sqlSelectWord);
+            ResultSet rs = preparedStatement.executeQuery();
 
-        String sqlSelectWord = "select * from word order by random() limit 30;";
-        PreparedStatement preparedStatement = connect.prepareStatement(sqlSelectWord);
-        ResultSet rs = preparedStatement.executeQuery();
-
-        while(rs.next()){
-            wordList.add(new Word( rs.getInt("idWord"), rs.getString("word"),
-                    rs.getString("category"), rs.getInt("quantitySyllables"),
-                    rs.getString("initialLetter").charAt(0), rs.getBoolean("mainWord")));
+            while (rs.next())
+            {
+                wordList.add(new Word(rs.getInt("idWord"), rs.getString("word"),
+                        rs.getString("category"), rs.getInt("quantitySyllables"),
+                        rs.getString("initialLetter").charAt(0), rs.getBoolean("mainWord")));
+            }
+        }
+        catch(SQLException e)
+        {
+            System.out.println(e);
         }
         printWordList(wordList);
     }
@@ -74,7 +89,8 @@ public class FamiliarityWordController implements Initializable {
 
     //Metodo para detectar el boton que ha sido seleccionado y asignar el valor de familiaridad que tenga el usuario
     @FXML
-    public void ActionPerformed(ActionEvent actionEvent) {
+    public void ActionPerformed(ActionEvent actionEvent)
+    {
         if (actionEvent.getSource().equals(button1)) {
             num = 1;
         } else if (actionEvent.getSource().equals(button2)) {
@@ -87,24 +103,30 @@ public class FamiliarityWordController implements Initializable {
             num = 5;
         }
         displayWord();
+        insertFamiliarityValue(wordList.get(i-2).getIdWord(), wordList.get(i-2).getWord(), num);
     }
 
     // Actualiza la palabra que se muestran en el label
-    public void displayWord(){
-        if(i < totalWords) {
+    public void displayWord()
+    {
+        if(i < totalWords)
+        {
             algo.setText(wordList.get(i).getWord());
-            insertFamiliarityValue(wordList.get(i).getIdWord(), wordList.get(i).getWord(), num);
             i = i + 1;
-        }else {
+        }
+        else
+        {
             primingInstructionController = new PrimingInstructionController();
             Stage stage = (Stage)button1.getScene().getWindow();
             primingInstructionController.showPrimingInstruction();
+            stage.close();
         }
     }
 
     // Hace insercion a la tabla Familiarity obteniendo desde el metodo displayWord el id de la palabra, la palabra y
     // el rango de familiaridad
-    private void insertFamiliarityValue(Integer idWord, String word, int num) {
+    private void insertFamiliarityValue(Integer idWord, String word, int num)
+    {
         System.out.println(idWord + "  " + word + "  " +num);
         String sqlInsert = "INSERT INTO Familiarity(score, idWord, idTest) values (?,?,1)";
         try{
@@ -113,16 +135,22 @@ public class FamiliarityWordController implements Initializable {
             sqlStatement.setInt(1, num);
             sqlStatement.setInt(2,idWord);
             sqlStatement.execute();
-            connect.close();
+//            connect.close();
         }catch (SQLException e){
             e.printStackTrace();
+        } finally {
+        	try {
+				connect.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
         }
     }
 
     public void showFamiliarityWord(){
         try{
             FXMLLoader familiarityWordLoader = new FXMLLoader();
-            Pane familiarityWord = (Pane)familiarityWordLoader.load(getClass().getResource("/Layouts/FamiliarityWord.fxml").openStream());
+            Pane familiarityWord = (Pane)familiarityWordLoader.load(getClass().getResource("../Layouts/FamiliarityWord.fxml").openStream());
 
             Scene scene = new Scene(familiarityWord);
             this.familiarityWordStage.setScene(scene);
@@ -134,8 +162,30 @@ public class FamiliarityWordController implements Initializable {
         }
     }
 
-    public void closeFamiliarityWord(){
+    public ArrayList<Word> getWordList()
+    {
+		return wordList;
+	}
+
+	public void closeFamiliarityWord()
+    {
         this.familiarityWordStage.close();
+    }
+
+    public void lastTest(){
+
+        String sqlSelect = "Select max(idTest) from Test";
+
+        try{
+            PreparedStatement ps = connect.prepareStatement(sqlSelect);
+            ResultSet rs = ps.executeQuery(sqlSelect);
+            while(rs.next()){
+                lastTest = rs.getInt("idTest");
+            }
+
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
     }
 
 }

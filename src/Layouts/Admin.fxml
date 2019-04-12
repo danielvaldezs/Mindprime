@@ -11,6 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
+
 <AnchorPane onKeyPressed="#searchUser" prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AdminController">
 
     <Label layoutX="338.0" layoutY="51.0" text="MIND PRIME">
@@ -23,6 +24,7 @@
          <Font size="20.0" />
       </font>
    </Label>
+
    <TextField fx:id="nameId" layoutX="148.0" layoutY="181.0" onKeyReleased="#searchUserEventK" onKeyTyped="#onlyLettersAndSpaces" prefHeight="31.0" prefWidth="288.0" />
    <Label layoutX="46.0" layoutY="247.0" text="Apellido:">
       <font>
@@ -54,6 +56,7 @@
          <Font size="20.0" />
       </font>
    </Button>
+
    <Line endX="-922.2000122070312" endY="490.6000061035156" layoutX="967.0" layoutY="-127.0" startX="-74.99993896484375" startY="490.6000061035156" />
 
    <RadioButton fx:id="rbTeptAsiId" layoutX="553.0" layoutY="244.0" mnemonicParsing="false" onAction="#searchUserEventA" text="TEPT-ASI">
@@ -65,7 +68,7 @@
    <RadioButton fx:id="rbCFId" layoutX="555.0" layoutY="304.0" mnemonicParsing="false" onAction="#searchUserEventA" text="CF" toggleGroup="$categoryUserGroup" />
 
 
-   <Button layoutX="72.0" layoutY="39.0" mnemonicParsing="false" onAction="#generateStatistics" prefHeight="40.0" prefWidth="152.0" text="Ver Estadísticas" />
+   <Button layoutX="72.0" layoutY="39.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="152.0" text="Ver Estadísticas" />
    <Button layoutX="72.0" layoutY="93.0" mnemonicParsing="false" onAction="#addNewWord" prefHeight="40.0" prefWidth="152.0" text="Agregar Palabra" />
 
    <ListView fx:id="listId" layoutX="47.0" layoutY="397.0" onMouseClicked="#clickUserList" prefHeight="248.0" prefWidth="606.0" />

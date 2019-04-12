@@ -36,7 +36,16 @@ public class Word {
         this.mainWord = mainWord;
     }
 
-    public Integer getIdWord() {
+    public Word(Integer idWord, String word, String category, Integer quantitySyllables, char initialLetter) {
+		super();
+		this.idWord = idWord;
+		this.word = word;
+		this.category = category;
+		this.quantitySyllables = quantitySyllables;
+		this.initialLetter = initialLetter;
+	}
+
+	public Integer getIdWord() {
         return idWord;
     }
 

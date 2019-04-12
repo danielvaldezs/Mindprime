@@ -6,16 +6,22 @@ import java.sql.SQLException;
 
 public class dbConnection {
 
-    public static Connection getConnection() throws SQLException {
+	// Metodo para obtener conexion a la base de datos
+    public static Connection getConnection()
+    {
         Connection conn = null;
         String path = System.getProperty("user.dir");
         String SQLCONNECTION = "jdbc:sqlite:" + path +"/src/DatabaseConnection/MindPrimeDBCambios.db";
 
-        try {
+        try
+        {
             Class.forName("org.sqlite.JDBC");
             return DriverManager.getConnection(SQLCONNECTION);
-        } catch (ClassNotFoundException ex) {
+        }
+        catch (ClassNotFoundException|SQLException ex)
+        {
             ex.printStackTrace();
+            System.out.println("No se pudo realizar la coneccion a la base de datos"+ex);
         }
         return null;
     }

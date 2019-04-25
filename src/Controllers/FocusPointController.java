@@ -19,6 +19,7 @@ public class FocusPointController implements Initializable
     public Stage focusPointStage = new Stage();
     public FamiliarityWordController familiarityWord = new FamiliarityWordController();
     public PrimingWordController primingWord = new PrimingWordController();
+    public PrimingWord2Controller primingWord2 = new PrimingWord2Controller();
 
     public FocusPointController()
     {
@@ -84,7 +85,8 @@ public class FocusPointController implements Initializable
     public void close()
     {
         this.focusPointStage.close();
-        primingWord.showPrimingWord();
+//        primingWord.showPrimingWord();
+        primingWord2.showPrimingWord();
         focusPointStage.close();
     }
 

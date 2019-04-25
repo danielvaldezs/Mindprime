@@ -43,17 +43,11 @@ public class FamiliarityWordController implements Initializable {
     //palabra del arraylist en el label que corresponde
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        try
-        {
+
             getWords();
             displayWord();
-//            lastTest();
-            connect.close();
-        }
-        catch (SQLException e)
-        {
-            e.printStackTrace();
-        }
+            lastTest = lastTest();
+
     }
 
     //Obtener palabras de la base de datos y guardarlas en el arraylist wordList de tipo word
@@ -77,7 +71,7 @@ public class FamiliarityWordController implements Initializable {
         {
             System.out.println(e);
         }
-        printWordList(wordList);
+//        printWordList(wordList);
     }
 
     // Imprime los valores guardados en el arraylist wordList
@@ -102,39 +96,55 @@ public class FamiliarityWordController implements Initializable {
         } else if (actionEvent.getSource().equals(button5)) {
             num = 5;
         }
-        displayWord();
-        insertFamiliarityValue(wordList.get(i-2).getIdWord(), wordList.get(i-2).getWord(), num);
-    }
 
-    // Actualiza la palabra que se muestran en el label
-    public void displayWord()
-    {
-        if(i < totalWords)
-        {
-            algo.setText(wordList.get(i).getWord());
-            i = i + 1;
-        }
-        else
-        {
+        if(i < 10){
+
+            insertFamiliarityValue(wordList.get(i).getIdWord(), wordList.get(i).getWord(), num);
+            i++;
+            displayWord();
+        }else{
             primingInstructionController = new PrimingInstructionController();
             Stage stage = (Stage)button1.getScene().getWindow();
             primingInstructionController.showPrimingInstruction();
             stage.close();
         }
+
+
+    }
+
+    // Actualiza la palabra que se muestran en el label
+    public void displayWord()
+    {
+        algo.setText(wordList.get(i).getWord());
+//        if(i < totalWords)
+//        {
+//            algo.setText(wordList.get(i).getWord());
+//            i = i + 1;
+//        }
+//        else
+//        {
+//            primingInstructionController = new PrimingInstructionController();
+//            Stage stage = (Stage)button1.getScene().getWindow();
+//            primingInstructionController.showPrimingInstruction();
+//            stage.close();
+//        }
     }
 
     // Hace insercion a la tabla Familiarity obteniendo desde el metodo displayWord el id de la palabra, la palabra y
     // el rango de familiaridad
     private void insertFamiliarityValue(Integer idWord, String word, int num)
     {
+
         System.out.println(idWord + "  " + word + "  " +num);
-        String sqlInsert = "INSERT INTO Familiarity(score, idWord, idTest) values (?,?,1)";
+
+        String sqlInsert = "INSERT INTO Familiarity(score, idWord, idTest) values (?,?,?);";
         try{
             Connection connect = dbConnection.getConnection();
             PreparedStatement sqlStatement = connect.prepareStatement(sqlInsert);
             sqlStatement.setInt(1, num);
             sqlStatement.setInt(2,idWord);
-            sqlStatement.execute();
+            sqlStatement.setInt(3,lastTest);
+            sqlStatement.executeUpdate();
 //            connect.close();
         }catch (SQLException e){
             e.printStackTrace();
@@ -172,13 +182,13 @@ public class FamiliarityWordController implements Initializable {
         this.familiarityWordStage.close();
     }
 
-    public void lastTest(){
+    public int lastTest(){
 
-        String sqlSelect = "Select max(idTest) from Test";
+        String sqlSelect = "select idTest from Test order by idTest DESC limit 1;";
 
         try{
             PreparedStatement ps = connect.prepareStatement(sqlSelect);
-            ResultSet rs = ps.executeQuery(sqlSelect);
+            ResultSet rs = ps.executeQuery();
             while(rs.next()){
                 lastTest = rs.getInt("idTest");
             }
@@ -186,6 +196,7 @@ public class FamiliarityWordController implements Initializable {
         }catch(SQLException e){
             e.printStackTrace();
         }
+        return lastTest;
     }
 
 }

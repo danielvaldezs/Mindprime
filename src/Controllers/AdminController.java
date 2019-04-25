@@ -126,7 +126,7 @@ public class AdminController implements Initializable {
 //        int currentUserId=0;
 
         String sqlSelectId = "select idUser from user where (firstName = ?) and (lastName = ?) and (institution = ?)";
-        String sqlInsertTest = "Insert into test(correctAnswers,dateDone, idUser) values (0,date('now'), ?)";
+
 
 //        String sqlInsertTest = "Insert into test(correctAnswers,dateDone, idUser) values (0,date('now'), ?)";
 
@@ -151,12 +151,12 @@ public class AdminController implements Initializable {
         }catch(SQLException e){
             e.printStackTrace();
         }
-
+        String sqlInsertTest = "Insert into test(correctAnswers,dateDone, idUser) values (0,date('now'), ?)";
         try{
             PreparedStatement prepareStatement = connect.prepareStatement(sqlInsertTest);
             prepareStatement.setInt(1, currentUserId);
 
-//            prepareStatement.executeQuery(sqlInsertTest);
+            prepareStatement.executeUpdate();
 
 //            connect.close();
 

@@ -119,7 +119,7 @@ public class PrimingWord2Controller implements Initializable{
 
         i=0;
 		if(turns < 10){
-//            insertActivityPriming(answer, lastTest, wordList.get(turns).getIdWord());
+            insertActivityPriming(answer, lastTest, wordList.get(turns).getIdWord());
             turns++;
             hideLetters();
             getOptions(wordList.get(turns));
@@ -232,12 +232,14 @@ public class PrimingWord2Controller implements Initializable{
     }
 
     private void insertActivityPriming(boolean answer, int idTest, int idWord){
-        String sqlInsert = "Insert into ActivityPriming(answerTime, movementTime,answer, idTest, idWord) values (1,1,?,?,?)";
+        String sqlInsert = "Insert into ActivityPriming(answerTime, movementTime,answer, idTest, idWord) values (?,?,?,?,?)";
         try{
             PreparedStatement sqlStatement = connect.prepareStatement(sqlInsert);
-            sqlStatement.setBoolean(1, answer);
-            sqlStatement.setInt(2,idTest);
-            sqlStatement.setInt(3, idWord);
+            sqlStatement.setDouble(1, total);
+            sqlStatement.setDouble(2, 3.5);
+            sqlStatement.setBoolean(3, answer);
+            sqlStatement.setInt(4,idTest);
+            sqlStatement.setInt(5, idWord);
 
             sqlStatement.execute();
 

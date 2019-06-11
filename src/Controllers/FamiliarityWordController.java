@@ -24,17 +24,14 @@ import java.util.ResourceBundle;
 public class FamiliarityWordController implements Initializable {
 
     @FXML
-    public Text texto;
     public Text algo;
     public Button button1, button2, button3, button4, button5;
     public PrimingInstructionController primingInstructionController;
 
-
-
     Connection connect;
 
     Stage familiarityWordStage = new Stage();
-    int num, i=0, totalWords=10;
+    int num, i=0;
     int lastTest;
 
     ArrayList<Word> wordList = new ArrayList<Word>();
@@ -71,7 +68,6 @@ public class FamiliarityWordController implements Initializable {
         {
             System.out.println(e);
         }
-//        printWordList(wordList);
     }
 
     // Imprime los valores guardados en el arraylist wordList
@@ -116,18 +112,6 @@ public class FamiliarityWordController implements Initializable {
     public void displayWord()
     {
         algo.setText(wordList.get(i).getWord());
-//        if(i < totalWords)
-//        {
-//            algo.setText(wordList.get(i).getWord());
-//            i = i + 1;
-//        }
-//        else
-//        {
-//            primingInstructionController = new PrimingInstructionController();
-//            Stage stage = (Stage)button1.getScene().getWindow();
-//            primingInstructionController.showPrimingInstruction();
-//            stage.close();
-//        }
     }
 
     // Hace insercion a la tabla Familiarity obteniendo desde el metodo displayWord el id de la palabra, la palabra y
@@ -160,7 +144,7 @@ public class FamiliarityWordController implements Initializable {
     public void showFamiliarityWord(){
         try{
             FXMLLoader familiarityWordLoader = new FXMLLoader();
-            Pane familiarityWord = (Pane)familiarityWordLoader.load(getClass().getResource("../Layouts/FamiliarityWord.fxml").openStream());
+            Pane familiarityWord = (Pane)familiarityWordLoader.load(getClass().getResource("/Layouts/FamiliarityWord.fxml").openStream());
 
             Scene scene = new Scene(familiarityWord);
             this.familiarityWordStage.setScene(scene);

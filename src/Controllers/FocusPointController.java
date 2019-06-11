@@ -19,7 +19,6 @@ public class FocusPointController implements Initializable
     public Stage focusPointStage = new Stage();
     public FamiliarityWordController familiarityWord = new FamiliarityWordController();
     public PrimingWordController primingWord = new PrimingWordController();
-    public PrimingWord2Controller primingWord2 = new PrimingWord2Controller();
 
     public FocusPointController()
     {
@@ -52,10 +51,6 @@ public class FocusPointController implements Initializable
     //a la vista FamiliarityWord
     public void setTimer()
     {
-//        Timeline contador = new Timeline(new KeyFrame(
-//                Duration.seconds(3),
-//                accion -> familiarityWord.showFamiliarityWord()));
-//        contador.play();
         try
         {
             Thread.sleep(3000);
@@ -82,30 +77,9 @@ public class FocusPointController implements Initializable
         }
     }
 
-    public void close()
-    {
-        this.focusPointStage.close();
-//        primingWord.showPrimingWord();
-        primingWord2.showPrimingWord();
-        focusPointStage.close();
-    }
-
-//    @Override
-//    public void setScreenParent(ScreensController screenParent) {
-//        myController = screenParent;
-//    }
-
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
 
     }
-
-    //Metodo que debe cerrar la vista de focus point
-    //aun no funciona, falta implementar bien la navegacion entre vistas
-    //    public void closeFocusPoint(){
-    //        this.focusPointStage.close();
-    //    }
-
-
 }

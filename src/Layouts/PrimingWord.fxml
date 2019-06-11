@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane onMouseMoved="#holi" prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PrimingWord2Controller">
+<AnchorPane onMouseMoved="#mouseMouvement" prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="Controllers.PrimingWord2Controller">
             
             <Label fx:id="hideLetterWord" alignment="CENTER" layoutX="106.0" layoutY="61.0" prefHeight="70.0" prefWidth="738.0">
 		        <font>
@@ -13,19 +13,19 @@
 		        </font>
 		    </Label>
 		    
-		    <Button fx:id="option1" layoutX="162.0" layoutY="400.0" mnemonicParsing="false" onAction="#ActionPerformed" prefHeight="63.0" prefWidth="151.0">
+		    <Button onMouseMoved="#mouseMouvement" fx:id="option1" layoutX="162.0" layoutY="400.0" mnemonicParsing="false" onAction="#ActionPerformed" prefHeight="63.0" prefWidth="151.0">
 		      <font>
 		         <Font size="20.0" />
 		      </font>
 		   </Button>
 		   
-		    <Button fx:id="option2" layoutX="399.0" layoutY="400.0" mnemonicParsing="false" onAction="#ActionPerformed" prefHeight="63.0" prefWidth="151.0">
+		    <Button onMouseMoved="#mouseMouvement" fx:id="option2" layoutX="399.0" layoutY="400.0" mnemonicParsing="false" onAction="#ActionPerformed" prefHeight="63.0" prefWidth="151.0">
 		      <font>
 		         <Font size="20.0" />
 		      </font>
 		   </Button>
 		   
-		    <Button fx:id="option3" layoutX="635.0" layoutY="400.0" mnemonicParsing="false" onAction="#ActionPerformed" prefHeight="63.0" prefWidth="151.0">
+		    <Button onMouseMoved="#mouseMouvement" fx:id="option3" layoutX="635.0" layoutY="400.0" mnemonicParsing="false" onAction="#ActionPerformed" prefHeight="63.0" prefWidth="151.0">
 		      <font>
 		         <Font size="20.0" />
 		      </font>

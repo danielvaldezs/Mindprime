@@ -1,21 +1,15 @@
 package Controllers;
 
-import LoginAdminApp.MainApp;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
+import Controllers.FamiliarityWordController;
+import Controllers.FocusPointController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 import java.io.IOException;
-import java.net.URL;
-import java.sql.SQLException;
-import java.util.ResourceBundle;
 
 public class FamiliarityInstructionController
 {

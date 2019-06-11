@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FinishedTestController">
+<AnchorPane prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="Controllers.FinishedTestController">
 
     <Label alignment="CENTER" contentDisplay="CENTER" layoutX="53.0" layoutY="205.0" prefHeight="98.0" prefWidth="844.0" text="El test ha finalizado" textAlignment="CENTER" wrapText="true">
         <font>

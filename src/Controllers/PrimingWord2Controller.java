@@ -31,8 +31,8 @@ public class PrimingWord2Controller implements Initializable{
     public Button option1, option2, option3;
     private String completeWord, incompleteWord;
     int turns=0, i = 0, lastTest;
-    long init, click, total, mouse, total2;
-//    Word wordUsing;
+    long init, click, total, mouse, movementTime;
+    ArrayList<Long> movementList = new ArrayList<Long>();
     String[] answerOptions = new String[2];
     private ArrayList<Word> wordList = new ArrayList<>();
     Stage primingWordStage = new Stage();
@@ -72,22 +72,15 @@ public class PrimingWord2Controller implements Initializable{
         catch(SQLException e){
             System.out.println(e);
         }
-//        printWordList(wordList);
-    }
-
-    // Imprime los valores guardados en el arraylist wordList
-    public void printWordList(ArrayList<Word> wordList ){
-        for(int i = 0; i < wordList.size(); i++){
-            System.out.println(wordList.get(i));
-        }
     }
 
     @FXML
     public void ActionPerformed(ActionEvent actionEvent)
     {
+        movementList.clear();
+//        System.out.println("rnfr" + movementList.get(0));
         click = System.currentTimeMillis();
         total = click - init;
-        System.out.println("click" + total);
         boolean answer=false;
 		if (actionEvent.getSource().equals(option1))
 		{
@@ -116,7 +109,6 @@ public class PrimingWord2Controller implements Initializable{
                 System.out.println("incorrecto!!");
             }
 		}
-
         i=0;
 		if(turns < 10){
             insertActivityPriming(answer, lastTest, wordList.get(turns).getIdWord());
@@ -125,6 +117,7 @@ public class PrimingWord2Controller implements Initializable{
             getOptions(wordList.get(turns));
             showWordsInView();
             init = System.currentTimeMillis();
+            movementList.add(mouse);
 
         }else {
 		    showFinishedTestView();
@@ -162,7 +155,6 @@ public class PrimingWord2Controller implements Initializable{
             removePositions[1] = 4;
             removePositions[2] = 6;
             removePositions[3] = 8;
-
         }
 
         // Llamar al metodo y devolver la palabra que retorna ese metodo
@@ -185,14 +177,12 @@ public class PrimingWord2Controller implements Initializable{
     }
 
     public void hideLetters(){
-//        wordUsing = wordList.get(turns);
         completeWord = wordList.get(turns).getWord();
         incompleteWord = manipulateWord(wordList.get(turns).getWord());
     }
 
     public void getOptions(Word word){
         connect = dbConnection.getConnection();
-//        Word[] answerOptions = new Word[2];
         String sql = "select word from word where quantitySyllables = ? and word != ? limit 2";
 
         try{
@@ -225,9 +215,6 @@ public class PrimingWord2Controller implements Initializable{
             option1.setText(answerOptions[1]);
             option2.setText(answerOptions[0]);
         }
-//        option1.setText(answerOptions[0]);
-//        option2.setText(answerOptions[1]);
-//        option3.setText(completeWord);
         hideLetterWord.setText(incompleteWord);
     }
 
@@ -260,13 +247,9 @@ public class PrimingWord2Controller implements Initializable{
         hideLetters();
         getOptions(wordList.get(turns));
         showWordsInView();
-        lastTest = lastTest();
-//        System.out.println(completeWord);
-//        System.out.println(incompleteWord);
-//        System.out.println(answerOptions[0]);
-//        System.out.println(answerOptions[1]);
+        lastTest = getLastTest();
     }
-    public int lastTest(){
+    public int getLastTest(){
 
         String sqlSelect = "select idTest from Test order by idTest DESC limit 1;";
 
@@ -283,9 +266,11 @@ public class PrimingWord2Controller implements Initializable{
         return lastTest;
     }
 
-    public void holi(MouseEvent mouseEvent) {
+    public void mouseMouvement(MouseEvent mouseEvent) {
         mouse = System.currentTimeMillis();
-        System.out.println(mouse + "ugugug");
+        movementList.add(mouse);
+        movementTime = movementList.get(0)-init;
+        System.out.println("movementTime---" + movementTime);
     }
 }
 

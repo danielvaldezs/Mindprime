@@ -1,5 +1,6 @@
-package Controllers;
+package Layouts;
 
+import Controllers.AdminController;
 import DatabaseConnection.dbConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -100,7 +101,7 @@ public class LoginController implements Initializable {
         try{
 
             FXMLLoader adminLoader = new FXMLLoader();
-            Pane adminRoot = (Pane)adminLoader.load(getClass().getResource("/Layouts/Admin.fxml").openStream());
+            Pane adminRoot = (Pane)adminLoader.load(getClass().getResource("Admin.fxml").openStream());
 
             AdminController adminController = (AdminController)adminLoader.getController();
             Scene scene = new Scene(adminRoot);

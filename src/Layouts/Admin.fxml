@@ -11,8 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane onKeyPressed="#searchUser" prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AdminController">
+<AnchorPane onKeyPressed="#searchUser" prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="Controllers.AdminController">
 
     <Label layoutX="338.0" layoutY="51.0" text="MIND PRIME">
         <font>
@@ -68,8 +67,8 @@
    <RadioButton fx:id="rbCFId" layoutX="555.0" layoutY="304.0" mnemonicParsing="false" onAction="#searchUserEventA" text="CF" toggleGroup="$categoryUserGroup" />
 
 
-   <Button layoutX="72.0" layoutY="39.0" mnemonicParsing="false" onAction="#generateStatistics" prefHeight="40.0" prefWidth="152.0" text="Ver Estadísticas" />
-   <Button layoutX="72.0" layoutY="93.0" mnemonicParsing="false" onAction="#addNewWord" prefHeight="40.0" prefWidth="152.0" text="Agregar Palabra" />
+   <!--<Button layoutX="72.0" layoutY="39.0" mnemonicParsing="false" onAction="#generateStatistics" prefHeight="40.0" prefWidth="152.0" text="Ver Estadísticas" />-->
+   <Button layoutX="71.0" layoutY="81.0" mnemonicParsing="false" onAction="#addNewWord" prefHeight="40.0" prefWidth="152.0" text="Agregar Palabra" />
 
    <ListView fx:id="listId" layoutX="47.0" layoutY="397.0" onMouseClicked="#clickUserList" prefHeight="248.0" prefWidth="606.0" />
    <Button layoutX="705.0" layoutY="489.0" mnemonicParsing="false" onAction="#editUser" prefHeight="63.0" prefWidth="151.0" text="EDITAR">
@@ -87,5 +86,5 @@
          <Font size="20.0" />
       </font>
    </Button>
-   <DatePicker fx:id="datePickerId" layoutX="669.0" layoutY="187.0" promptText="MM/DD/YYYY" onKeyReleased="#searchUserEventK"/>
+   <DatePicker fx:id="datePickerId" layoutX="669.0" layoutY="187.0" onKeyReleased="#searchUserEventK" promptText="MM/DD/YYYY" />
 </AnchorPane>

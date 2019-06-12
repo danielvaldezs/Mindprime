@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.FlowPane?>
@@ -13,18 +14,36 @@
     <children>
 
         <FlowPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-        <Button fx:id="button1" mnemonicParsing="false" onAction="#ActionPerformed" text="1" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-        <Button fx:id="button2" mnemonicParsing="false" onAction="#ActionPerformed" text="2" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-        <Button fx:id="button3" mnemonicParsing="false" onAction="#ActionPerformed" text="3" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-        <Button fx:id="button4" mnemonicParsing="false" onAction="#ActionPerformed" text="4" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-        <Button fx:id="button5" mnemonicParsing="false" onAction="#ActionPerformed" text="5" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+        <Button fx:id="button1" alignment="CENTER_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#ActionPerformed" text="1" textAlignment="JUSTIFY" GridPane.columnIndex="0" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="50.0" />
+         </GridPane.margin></Button>
+        <Button fx:id="button2" mnemonicParsing="false" onAction="#ActionPerformed" text="2" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="50.0" />
+         </GridPane.margin></Button>
+        <Button fx:id="button3" mnemonicParsing="false" onAction="#ActionPerformed" text="3" GridPane.columnIndex="2" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="50.0" />
+         </GridPane.margin></Button>
+        <Button fx:id="button4" mnemonicParsing="false" onAction="#ActionPerformed" text="4" GridPane.columnIndex="3" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="50.0" />
+         </GridPane.margin></Button>
+        <Button fx:id="button5" mnemonicParsing="false" onAction="#ActionPerformed" text="5" GridPane.columnIndex="4" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="50.0" />
+         </GridPane.margin></Button>
 
 
         <Region prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
      <Text fx:id="algo" strokeType="OUTSIDE" strokeWidth="0" text="text" GridPane.columnIndex="2">
          <font>
-             <Font size="48"/>
+             <Font size="48" />
          </font>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
      </Text>
 
     </children>

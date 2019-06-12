@@ -147,7 +147,7 @@ public class FinishedTestController {
     public void generateSecondSheet(){
         String sqlQuery = "select w.idWord, w.word, w.category ,f.score from Familiarity f\n" +
                 "join Word w on w.idWord = f.idWord\n" +
-                "where f.idTest = (select Test.idTest from Test order by idUser DESC limit 1);";
+                "where f.idTest = (select Test.idTest from Test order by idTest DESC limit 1);";
         try{
             Connection connect = dbConnection.getConnection();
             PreparedStatement ps = connect.prepareStatement(sqlQuery);
@@ -180,7 +180,7 @@ public class FinishedTestController {
 //
         String sqlQuery = "select W.idWord, W.word, W.category, ap.answer, ap.answerTime from ActivityPriming ap\n" +
                 "join Word W on ap.idWord = W.idWord\n" +
-                "where ap.idTest =(select t.idTest from Test t order by idUser DESC limit 1);";
+                "where ap.idTest =(select t.idTest from Test t order by idTest DESC limit 1);";
 
         try{
             Connection connect = dbConnection.getConnection();

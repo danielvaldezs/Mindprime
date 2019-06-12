@@ -24,14 +24,17 @@ import java.util.ResourceBundle;
 public class FamiliarityWordController implements Initializable {
 
     @FXML
+    public Text texto;
     public Text algo;
     public Button button1, button2, button3, button4, button5;
     public PrimingInstructionController primingInstructionController;
 
+
+
     Connection connect;
 
     Stage familiarityWordStage = new Stage();
-    int num, i=0;
+    int num, turns = 1, totalWords=30;
     int lastTest;
 
     ArrayList<Word> wordList = new ArrayList<Word>();
@@ -41,9 +44,9 @@ public class FamiliarityWordController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-            getWords();
-            displayWord();
-            lastTest = lastTest();
+        getWords();
+        displayWord();
+        lastTest = lastTest();
 
     }
 
@@ -53,7 +56,7 @@ public class FamiliarityWordController implements Initializable {
         connect = dbConnection.getConnection();
         try
         {
-            String sqlSelectWord = "select * from word order by random() limit 30;";
+            String sqlSelectWord = "select * from word order by random() limit " + totalWords + 1;
             PreparedStatement preparedStatement = connect.prepareStatement(sqlSelectWord);
             ResultSet rs = preparedStatement.executeQuery();
 
@@ -68,6 +71,7 @@ public class FamiliarityWordController implements Initializable {
         {
             System.out.println(e);
         }
+//        printWordList(wordList);
     }
 
     // Imprime los valores guardados en el arraylist wordList
@@ -93,12 +97,16 @@ public class FamiliarityWordController implements Initializable {
             num = 5;
         }
 
-        if(i < 10){
+        if(turns < totalWords){
 
-            insertFamiliarityValue(wordList.get(i).getIdWord(), wordList.get(i).getWord(), num);
-            i++;
+            insertFamiliarityValue(wordList.get(turns).getIdWord(), wordList.get(turns).getWord(), num);
+            turns++;
+            if (turns <= totalWords){
+                displayWord();
+            }
             displayWord();
         }else{
+            insertFamiliarityValue(wordList.get(turns).getIdWord(), wordList.get(turns).getWord(), num);
             primingInstructionController = new PrimingInstructionController();
             Stage stage = (Stage)button1.getScene().getWindow();
             primingInstructionController.showPrimingInstruction();
@@ -111,7 +119,19 @@ public class FamiliarityWordController implements Initializable {
     // Actualiza la palabra que se muestran en el label
     public void displayWord()
     {
-        algo.setText(wordList.get(i).getWord());
+        algo.setText(wordList.get(turns).getWord());
+//        if(turns < totalWords)
+//        {
+//            algo.setText(wordList.get(turns).getWord());
+//            turns = turns + 1;
+//        }
+//        else
+//        {
+//            primingInstructionController = new PrimingInstructionController();
+//            Stage stage = (Stage)button1.getScene().getWindow();
+//            primingInstructionController.showPrimingInstruction();
+//            stage.close();
+//        }
     }
 
     // Hace insercion a la tabla Familiarity obteniendo desde el metodo displayWord el id de la palabra, la palabra y
@@ -133,11 +153,11 @@ public class FamiliarityWordController implements Initializable {
         }catch (SQLException e){
             e.printStackTrace();
         } finally {
-        	try {
-				connect.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+            try {
+                connect.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -158,10 +178,10 @@ public class FamiliarityWordController implements Initializable {
 
     public ArrayList<Word> getWordList()
     {
-		return wordList;
-	}
+        return wordList;
+    }
 
-	public void closeFamiliarityWord()
+    public void closeFamiliarityWord()
     {
         this.familiarityWordStage.close();
     }

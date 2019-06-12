@@ -30,13 +30,14 @@ public class PrimingWord2Controller implements Initializable{
     public Label hideLetterWord;
     public Button option1, option2, option3;
     private String completeWord, incompleteWord;
-    int turns=0, i = 0, lastTest;
+    int turns=1, i = 0, lastTest;
     long init, click, total, mouse, movementTime;
     ArrayList<Long> movementList = new ArrayList<Long>();
     String[] answerOptions = new String[2];
     private ArrayList<Word> wordList = new ArrayList<>();
     Stage primingWordStage = new Stage();
     FamiliarityWordController familiarityWord = new FamiliarityWordController();
+    int totalWords = 30;
 
     private Connection connect;
 
@@ -110,17 +111,22 @@ public class PrimingWord2Controller implements Initializable{
             }
 		}
         i=0;
-		if(turns < 10){
+		if(turns < totalWords){
             insertActivityPriming(answer, lastTest, wordList.get(turns).getIdWord());
             turns++;
             hideLetters();
             getOptions(wordList.get(turns));
             showWordsInView();
+//            if(turns<totalWords){
+//                insertActivityPriming(answer, lastTest, wordList.get(turns).getIdWord());
+//            }
             init = System.currentTimeMillis();
             movementList.add(mouse);
 
         }else {
-		    showFinishedTestView();
+            insertActivityPriming(answer, lastTest, wordList.get(turns).getIdWord());
+
+            showFinishedTestView();
             ((Node)actionEvent.getSource()).getScene().getWindow().hide();
         }
     }
